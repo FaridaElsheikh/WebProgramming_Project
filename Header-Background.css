@@ -1,0 +1,11 @@
+body{background-color: rgb(240, 242, 245);}
+
+
+.flex-header-container{background-color:darkblue; display: flex; flex-direction: row; list-style-type: none; align-items: center; justify-content: space-evenly;}
+.flex-header-item{color: white;}
+.header-img{width: 50px; height: 50px; border-radius: 1.5em;}
+.header-logo{width: 75px; height: 75px; }
+.flex-header-container a{text-decoration: none; color: white;}
+
+
+
