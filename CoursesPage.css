@@ -3,7 +3,7 @@
 }
 
 .cbtn {
-    background-color: rgb(35, 214, 238);;
+    background-color: rgb(35, 214, 238);
     color: white;
     text-decoration: none;
     padding: 8px 16px;
@@ -15,3 +15,46 @@
     border: solid rgb(35, 214, 238);
     border-radius: 10px;
 }
+
+table.zebra tr:nth-child(even) {
+    background-color: rgb(35, 214, 238);
+}
+ 
+ 
+table.zebra   {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0px 0px;
+    font-size: 12px;
+}
+ 
+table.zebra th {
+    background: #eeecec;
+    color: yellowgreen;
+    padding: 10px 3px;
+    text-align: center;
+    border-right: 1px solid rgb(35, 214, 238);
+    border-left: 1px solid rgb(35, 214, 238);
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+table.zebra td {
+    padding: 10px 3px;
+    border-bottom: 1px solid #eeecec;
+    vertical-align: middle;
+    letter-spacing: .5px;
+    text-align: center;
+    border-right: 1px solid #eeecec;
+    border-left: 1px solid #eeecec;    
+}
+ 
+table.zebra tr {
+    background: yellowgreen;
+}
+ 
+table.zebra td * {
+     padding: 10px 20px 10px 20px;
+}
+
