@@ -1,3 +1,7 @@
 .create {
-    background-color: blueviolet;
+    background-color: rgb(171, 238, 165);
+
+    border: solid rgb(248, 160, 44);
+
+    border-radius: 10px;
 }
