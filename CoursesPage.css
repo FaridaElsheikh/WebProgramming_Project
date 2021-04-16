@@ -2,10 +2,16 @@
     
 }
 
-.btn {
+.cbtn {
     background-color: rgb(35, 214, 238);;
     color: white;
     text-decoration: none;
     padding: 8px 16px;
+    border-radius: 10px;
+}
+
+.courses {
+    background-color: yellowgreen;
+    border: solid rgb(35, 214, 238);
     border-radius: 10px;
 }
