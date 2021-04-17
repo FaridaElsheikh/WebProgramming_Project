@@ -17,7 +17,12 @@ body {
 .flex-header-item { 
     color: white;
 }
-
+.flex-header-item p{
+    display:inline;
+    position: relative;
+    bottom: 18px;
+    right: 10px;
+}
 .header-img {
     width: 50px;
     height: 50px;
@@ -25,6 +30,7 @@ body {
 }
 
 .header-logo { 
+    border-radius: 10px;
     width: 75px; 
     height: 75px;
     margin-top: 4px;
@@ -59,7 +65,7 @@ body {
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: rgb(245, 111, 21);
+    background-color: rgba(120, 111, 166,1.0);
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
@@ -70,6 +76,7 @@ body {
     padding: 12px 16px;
     text-decoration: none;
     display: block;
+    color: white;
 }
 
 .dropdown-content a:hover {

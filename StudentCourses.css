@@ -17,23 +17,39 @@
     margin: 55px 55px 55px 55px;
 }
 
-.content-grid-item{
-    border-style:outset
+.content{
+    border: solid rgba(120, 111, 166,1.0);
+    border-radius: 10px;
+  }
+
+.table{
+    margin: 10px;
 }
 .btn {
-    background-color: rgb(238, 185, 150);
+    background-color: rgba(120, 111, 166,1.0);
     border: none;
     color: white;
     padding: 10px;
     cursor: pointer;
     border-radius: 10px;
+    
   }
   
   .btn:hover {
-    background-color: rgb(231, 159, 110);
+    background-color: #e6d7ff;
   }
 
-
+  .courses-table th {
+    background: rgba(120, 111, 166,1.0);
+    color: #fff;
+    padding: 10px 3px;
+    text-align: center;
+    border-right: 1px solid rgba(120, 111, 166,1.0); /* #f9b074 */
+    border-left: 1px solid rgba(120, 111, 166,1.0);
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
 .courses-table{
     border-collapse: collapse;
     border-spacing: 0;
@@ -42,10 +58,13 @@
 .courses-table th,td{
     text-align: center;
     padding: 10px;
+    border-right: 1px solid rgba(120, 111, 166,1.0);
+    border-left: 1px solid rgba(120, 111, 166,1.0);  
+    border-bottom: 1px solid rgba(120, 111, 166,1.0);
 }
 
 .courses-table tr:nth-child(even){
-    background-color: rgb(238, 185, 150);
+    background-color: #e6d7ff;
 }
 
 .courses-table tr{

@@ -11,18 +11,25 @@
     left: 50%;
     transform: translate(-50%, -50%);
     width: 50%;
+
 }
 
 .form-container {
     max-width: 500px;
     padding: 10px;
     background-color: white;
+    align-items: center;
     text-align: start;
+    border: solid rgba(120, 111, 166,1.0);
+    border-radius: 10px;
 }
 
+hr{
+    color: rgba(120, 111, 166,1.0)s;
+}
 
 .form-container .btn {
-    background-color: rgb(231, 159, 110);
+    background-color: rgba(120, 111, 166,1.0);
     color: white;
     padding: 16px 20px;
     border: none;
@@ -31,3 +38,6 @@
     margin-bottom:10px;
     opacity: 0.8;
 }
+.form-container .btn:hover {
+    background-color: #e6d7ff;
+  }
