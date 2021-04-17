@@ -4,12 +4,13 @@ body {
 
 
 .flex-header-container { 
-    background-color:rgb(245, 111, 21);
+    background-color:#2cd86e;
     display: flex;
     flex-direction: row;
     list-style-type: none;
     align-items: center; 
     justify-content: space-evenly;
+    border-radius: 10px;
 }
 
 .flex-header-item { 

@@ -1,0 +1,59 @@
+.table-striped {
+    
+}
+
+.cbtn {
+    background-color: #2cd86e;
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 10px;
+}
+
+.courses {
+    border: solid #93f56c;
+    border-radius: 10px;
+}
+
+table.zebra tr:nth-child(even) {
+    background-color:#c6f5b0; /* fde4d0 */
+}
+ 
+ 
+table.zebra {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0px 0px;
+    font-size: 12px;
+}
+ 
+table.zebra th {
+    background: #2cd86e;
+    color: #fff;
+    padding: 10px 3px;
+    text-align: center;
+    border-right: 1px solid #93f56c; /* #f9b074 */
+    border-left: 1px solid #93f56c;
+    letter-spacing: 1px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+table.zebra td {
+    padding: 10px 3px;
+    vertical-align: middle;
+    letter-spacing: .5px;
+    text-align: center;
+    border-right: 1px solid #93f56c;
+    border-left: 1px solid #93f56c;  
+    border-bottom: 1px solid #93f56c;
+}
+ 
+table.zebra tr {
+    background: #fff;
+}
+ 
+table.zebra td * {
+     padding: 10px 20px 10px 20px;
+}
+

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body{
     background-color: lightgray;
 }
@@ -27,10 +28,18 @@ body{
 
 .btn {
     background-color: magenta;
+||||||| aced33a
+.btn {
+    background-color: magenta;
+=======
+.lbtn {
+    background-color: rgb(35, 214, 238);;
+>>>>>>> 8eb89167839ac140dda680a491d7dec90a446ef8
     color: white;
     text-decoration: none;
     padding: 8px 16px;
     border-radius: 10px;
+<<<<<<< HEAD
 
 }
 
@@ -78,3 +87,9 @@ body{
     background: #125688;
     color: white;
   }  
+||||||| aced33a
+
+}
+=======
+}
+>>>>>>> 8eb89167839ac140dda680a491d7dec90a446ef8
