@@ -1,22 +1,43 @@
-.table-striped {
-    
+body{
+    font-family:'Roboto', sans-serif;
 }
 
+
+.flex-option-container{
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    align-items: baseline;
+}
+
+.flex-option-item{
+    text-align: center;
+    align-content: center;
+}
+button{
+    background-color: rgba(120, 111, 166,1.0);
+    color: white;
+    border-radius: 10px;
+}
 .cbtn {
-    background-color: #2cd86e;
+    background-color: rgba(120, 111, 166,1.0);
     color: white;
     text-decoration: none;
     padding: 8px 16px;
     border-radius: 10px;
+    margin-left: 20px;
 }
+.cbtn:hover {
+    background-color: #e6d7ff;
+  }
 
 .courses {
-    border: solid #93f56c;
+    border: solid rgba(120, 111, 166,1.0);
     border-radius: 10px;
 }
 
 table.zebra tr:nth-child(even) {
-    background-color:#c6f5b0; /* fde4d0 */
+    background-color:#e6d7ff; /* fde4d0 */
 }
  
  
@@ -28,12 +49,12 @@ table.zebra {
 }
  
 table.zebra th {
-    background: #2cd86e;
+    background: rgba(120, 111, 166,1.0);
     color: #fff;
     padding: 10px 3px;
     text-align: center;
-    border-right: 1px solid #93f56c; /* #f9b074 */
-    border-left: 1px solid #93f56c;
+    border-right: 1px solid rgba(120, 111, 166,1.0); /* #f9b074 */
+    border-left: 1px solid rgba(120, 111, 166,1.0);
     letter-spacing: 1px;
     font-weight: bold;
     text-transform: uppercase;
@@ -44,9 +65,9 @@ table.zebra td {
     vertical-align: middle;
     letter-spacing: .5px;
     text-align: center;
-    border-right: 1px solid #93f56c;
-    border-left: 1px solid #93f56c;  
-    border-bottom: 1px solid #93f56c;
+    border-right: 1px solid rgba(120, 111, 166,1.0);
+    border-left: 1px solid rgba(120, 111, 166,1.0);  
+    border-bottom: 1px solid rgba(120, 111, 166,1.0);
 }
  
 table.zebra tr {

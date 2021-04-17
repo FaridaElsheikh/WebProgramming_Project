@@ -14,7 +14,7 @@
 }
 
 .btn {
-    background-color: rgb(238, 185, 150);
+    background-color: rgba(120, 111, 166,1.0);
     border: none;
     color: white;
     padding: 10px;
@@ -23,7 +23,7 @@
   }
   
 .btn:hover {
-    background-color: rgb(231, 159, 110);
+    background-color: #e6d7ff;
   }
 
 
@@ -38,7 +38,7 @@
 }
 
 .instructor-table tr:nth-child(even){
-    background-color: rgb(238, 185, 150);
+    background-color: #e6d7ff;
 }
 
 .instructor-table tr{

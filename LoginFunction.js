@@ -1,5 +1,5 @@
 function Login(){
-    var radio=document.getElementsByName('logintype');
+    var radio=document.getElementsByName('tab');
     var value;
     for(var i of radio) {
         if(i.checked){
