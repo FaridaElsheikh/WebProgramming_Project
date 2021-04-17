@@ -1,6 +1,22 @@
- $("#login-button").click(function(event){
-		 event.preventDefault();
-	 
-	 $('form').fadeOut(500);
-	 $('.wrapper').addClass('form-success');
-});
+function Login(){
+    var radio=document.getElementsByName('logintype');
+    var value;
+    for(var i of radio) {
+        if(i.checked){
+            value=i.value;
+        }
+    }
+    if(value =='Student'){
+        window.location.replace("./StudentPage.html");
+    }
+    else if(value=='Instructor'){
+        window.location.replace("./InstructorPage.html");
+    }
+    else if(value=='Secretary') {
+        window.location.replace("./SecretaryPage.html");
+    }
+
+}
+function redirect(){
+    window.location.replace("./StudentPage.html");
+}
