@@ -17,7 +17,12 @@ body {
 .flex-header-item { 
     color: white;
 }
-
+.flex-header-item p{
+    display:inline;
+    position: relative;
+    bottom: 18px;
+    right: 10px;
+}
 .header-img {
     width: 50px;
     height: 50px;
@@ -25,8 +30,10 @@ body {
 }
 
 .header-logo { 
+    border-radius: 10px;
     width: 75px; 
     height: 75px;
+    margin-top: 5px;
 }
 
 .flex-header-container a { 
