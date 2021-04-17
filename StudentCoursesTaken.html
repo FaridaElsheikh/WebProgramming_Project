@@ -27,71 +27,76 @@
             </div></li>
             
             <li class="flex-header-item"><a href="./StudentResearchGroup.html">Research Groups</a></li>
-            <li class="flex-header-item"><a href="./StudentProfile.html">Farida Elsheikh</a></li>
+            <li class="flex-header-item">Farida Elsheikh</li>
             <li class="flex-header-item"><img class="header-img" src="./ProfilePicture.webp" alt=""></li>
             <li class="flex-header-item"><a href="./MainPage.html">Logout</a></li>
         </ul>
     </div>
    
 
-    <div class="option-bar">
-        <ul class="flex-option-container">
-            <li class="flex-option-item"><h1>Taken Courses</h1></li>
-            <li class="flex-option-item"> <button class="btn" onclick="openForm()"><i class="fa fa-plus-square" aria-hidden="true" onclick="openForm()"></i></button></li>
-            <li class="flex-option-item"><a href="./material/LWD_Ch16A_flexbox.pptx"><button class="btn"><i class="fa fa-download"></i></button></a></li>
-        </ul>
-    </div>
+    <div class="content">
 
-    <div class="form-popup" id="myForm">
-        <form class="form-container">
-          <h1>Add Course</h1>
-          <hr>
-          <label for="recipient"><b>Course</b></label>
-          <select name="recipient" required>
-              <option>Prof. Reda</option>
-              <option>Prof. Muhsin</option>
-              <option>Prof. Hasan</option>
-              <option>Prof. Mehmet</option>
-          </select>
-          <br><br>
-          <button type="submit" class="btn" onclick="return false;">Add</button>
-          <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-        </form>
-      </div>
+        <div class="option-bar">
+            <ul class="flex-option-container">
+                <li class="flex-option-item"><h1>Taken Courses</h1></li>
+                <li class="flex-option-item"> <button class="btn" onclick="openForm()"><i class="fa fa-plus-square" aria-hidden="true" onclick="openForm()"></i></button></li>
+                <li class="flex-option-item"><a href="./material/LWD_Ch16A_flexbox.pptx"><button class="btn"><i class="fa fa-download"></i></button></a></li>
+            </ul>
+        </div>
     
-    <div>
-        <table class="courses-table">
-            <tr>
-                <th></th>
-                <th>Code</th>
-                <th>Name</th>
-                <th>Type</th>
-                <th>Material</th>
-            </tr>
-            <tr>
-                <td class="delete"><button class="btn"><i class="fa fa-minus-circle" aria-hidden="true"></i></i></i></button></td>
-                <td>15641460</td>
-                <td>Web Programming</td>
-                <td>Elective</td>
-                <td></td>
-            </tr>
-            <tr>
-                <td class="delete"><button class="btn"><i class="fa fa-minus-circle" aria-hidden="true"></i></i></i></button></td>
-                <td>15641460</td>
-                <td>Web Programming</td>
-                <td>Elective</td>
-                <td class="download"><a href="./material/LWD_Ch14_boxmodel.pptx"><button class="btn"><i class="fa fa-download"></i></button></a></td>
-            </tr>
-            <tr>
-                <td class="delete"><button class="btn"><i class="fa fa-minus-circle" aria-hidden="true"></i></i></i></button></td>
-                <td>15641460</td>
-                <td>Web Programming</td>
-                <td>Elective</td>
-                <td class="download"><a href="./material/LWD_Ch15_floating.pptx"><button class="btn"><i class="fa fa-download"></i></button></a></td>
-            </tr>
+        <div class="form-popup" id="myForm">
+            <form class="form-container">
+              <h1>Add Course</h1>
+              <hr>
+              <label for="recipient"><b>Course</b></label>
+              <select name="recipient" required>
+                  <option>Deep Learning</option>
+                  <option>Databases</option>
+                  <option>Algorithm Analysis</option>
+                  <option>Microprocessors</option>
+              </select>
+              <br><br>
+              <button type="submit" class="btn" onclick="return false;">Add</button>
+              <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+          </div>
+        
+        <div class="table">
+            <table class="courses-table">
+                <tr>
+                    <th></th>
+                    <th>Code</th>
+                    <th>Name</th>
+                    <th>Type</th>
+                    <th>Material</th>
+                </tr>
+                <tr>
+                    <td class="delete"><button class="btn"><i class="fa fa-minus-circle" aria-hidden="true"></i></i></i></button></td>
+                    <td>15641460</td>
+                    <td>Web Programming</td>
+                    <td>Elective</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td class="delete"><button class="btn"><i class="fa fa-minus-circle" aria-hidden="true"></i></i></i></button></td>
+                    <td>15641460</td>
+                    <td>Web Programming</td>
+                    <td>Elective</td>
+                    <td class="download"><a href="./material/LWD_Ch14_boxmodel.pptx"><button class="btn"><i class="fa fa-download"></i></button></a></td>
+                </tr>
+                <tr>
+                    <td class="delete"><button class="btn"><i class="fa fa-minus-circle" aria-hidden="true"></i></i></i></button></td>
+                    <td>15641460</td>
+                    <td>Web Programming</td>
+                    <td>Elective</td>
+                    <td class="download"><a href="./material/LWD_Ch15_floating.pptx"><button class="btn"><i class="fa fa-download"></i></button></a></td>
+                </tr>
+    
+    
+            </table>
+        </div>
 
 
-        </table>
     </div>
 </body>
 </html>
