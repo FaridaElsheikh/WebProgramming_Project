@@ -1,0 +1,71 @@
+h1{
+    font-size: 30px;
+    color: rgb(112, 77, 151);
+    text-transform: uppercase;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+
+table.zebra tr:nth-child(even) {
+    background-color: #fde4d0;
+ }
+ 
+ 
+ table.zebra   {
+     border-collapse: collapse;
+     width: 100%;
+     margin: 0px 0px;
+     font-size: 12px;
+ }
+ 
+ table.zebra th {
+     background: #f79646;
+     color: #fff;
+     padding: 10px 3px;
+     text-align: center;
+     border-right: 1px solid #f9b074;
+   border-left: 1px solid #f9b074;
+     letter-spacing: 1px;
+     font-weight: bold;
+   text-transform: uppercase;
+ 
+ }
+
+ 
+ 
+ table.zebra td {
+     padding: 10px 3px;
+     border-bottom: 1px solid #f9b074;
+     vertical-align: middle;
+     letter-spacing: .5px;
+     text-align: center;
+   border-left: 1px solid #f9b074;
+     border-right: 1px solid #f9b074;
+     
+ }
+ 
+ table.zebra tr {
+     background: #fff;
+ }
+ 
+ table.zebra td * {
+     padding: 10px 20px 10px 20px;
+ }
+ 
+ h2{
+    font-size: 30px;
+    color: rgb(112, 77, 151);
+    text-transform: uppercase;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  h6{
+    font-size: 18px;
+    color: rgb(112, 77, 151);
+    text-transform: uppercase;
+    font-weight: 300;
+    text-align: left;
+    margin-bottom: 15px;
+  }
