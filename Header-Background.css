@@ -30,7 +30,48 @@ body {
 .flex-header-container a { 
     text-decoration: none;
     color: white;
+    line-height: 25px;
+    padding: 12px;
+    font-size: 18px; 
+    border-radius: 4px;
+    
 }
 
+.header a:hover {
+    background-color: white;
+    color: black;
+ }
 
+.header a.active {
+    background-color: white;
+    color: black;
+}
 
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rgb(245, 111, 21);
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+      background-color:white;
+}
+
+.dropdown:hover .dropdown-content {
+      display: block;
+}

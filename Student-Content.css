@@ -1,5 +1,24 @@
-.content{margin: 5px; background-color: white;}
-.content-flex-container{list-style-type: none;display: flex;flex-direction: row;}
-.content-flex-item{background-color: rgb(240, 242, 245); padding: 5px;margin: 5px;}
-.content-logo{width: 50px;height: 50px;}
-.content-title{float: right;}
+.header{grid-area: header; }
+.content-grid-container{
+    display: grid;
+    grid-template-columns:  auto auto;
+    grid-gap: 10px;
+    padding: 10px;
+    margin: 5px 0px;
+}
+
+.content-grid-item{
+    background-color:rgb(238, 185, 150);
+    text-align: center;
+}
+
+.content-logo{
+    width: 50px;
+    height: 50px;
+}
+
+.content-title{
+    float: right;
+    color: white;
+}
+
