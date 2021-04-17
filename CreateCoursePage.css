@@ -1,5 +1,6 @@
 .create {
-    background-color: yellowgreen;
-    border: solid rgb(35, 214, 238);
+    background-color:rgba(224, 215, 200, 0.5);
+    border: solid rgb(26, 25, 25);
     border-radius: 10px;
 }
+

@@ -3,7 +3,7 @@
 }
 
 .cbtn {
-    background-color: rgb(35, 214, 238);
+    background-color: #2cd86e;
     color: white;
     text-decoration: none;
     padding: 8px 16px;
@@ -11,17 +11,16 @@
 }
 
 .courses {
-    background-color: yellowgreen;
-    border: solid rgb(35, 214, 238);
+    border: solid #93f56c;
     border-radius: 10px;
 }
 
 table.zebra tr:nth-child(even) {
-    background-color: rgb(35, 214, 238);
+    background-color:#c6f5b0; /* fde4d0 */
 }
  
  
-table.zebra   {
+table.zebra {
     border-collapse: collapse;
     width: 100%;
     margin: 0px 0px;
@@ -29,12 +28,12 @@ table.zebra   {
 }
  
 table.zebra th {
-    background: #eeecec;
-    color: yellowgreen;
+    background: #2cd86e;
+    color: #fff;
     padding: 10px 3px;
     text-align: center;
-    border-right: 1px solid rgb(35, 214, 238);
-    border-left: 1px solid rgb(35, 214, 238);
+    border-right: 1px solid #93f56c; /* #f9b074 */
+    border-left: 1px solid #93f56c;
     letter-spacing: 1px;
     font-weight: bold;
     text-transform: uppercase;
@@ -42,16 +41,16 @@ table.zebra th {
 
 table.zebra td {
     padding: 10px 3px;
-    border-bottom: 1px solid #eeecec;
     vertical-align: middle;
     letter-spacing: .5px;
     text-align: center;
-    border-right: 1px solid #eeecec;
-    border-left: 1px solid #eeecec;    
+    border-right: 1px solid #93f56c;
+    border-left: 1px solid #93f56c;  
+    border-bottom: 1px solid #93f56c;
 }
  
 table.zebra tr {
-    background: yellowgreen;
+    background: #fff;
 }
  
 table.zebra td * {
