@@ -1,5 +1,9 @@
+body{
+    font-family:'Roboto', sans-serif;
+}
+
 .create {
-    background-color:rgba(217,217,214);
+    background-color:#e6d7ff; /* rgba(217,217,214) */
     border: solid rgba(120, 111, 166,1.0);
     border-radius: 10px;
 }

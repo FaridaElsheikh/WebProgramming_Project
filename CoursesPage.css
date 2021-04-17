@@ -2,6 +2,10 @@ body{
     font-family:'Roboto', sans-serif;
 }
 
+.courses {
+    border: solid rgba(120, 111, 166,1.0);
+    border-radius: 10px;
+}
 
 .flex-option-container{
     display: flex;
@@ -14,16 +18,14 @@ body{
     text-align: center;
     align-content: center;
 }
-button{
-    background-color: rgba(120, 111, 166,1.0);
-    color: white;
-    border-radius: 10px;
-}
+
 .cbtn {
     background-color: rgba(120, 111, 166,1.0);
+    border: none;
     color: white;
     text-decoration: none;
-    padding: 8px 16px;
+    padding: 10px;
+    cursor: pointer;
     border-radius: 10px;
     margin-left: 20px;
 }
@@ -31,15 +33,33 @@ button{
     background-color: #e6d7ff;
   }
 
-.courses {
-    border: solid rgba(120, 111, 166,1.0);
+.dowbtn {
+    background-color: rgba(120, 111, 166,1.0);
+    border: none;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-left: 20px;
+  }
+  .dowbtn:hover {
+    background-color: #e6d7ff;
+  }
+
+.delbtn {
+    background-color: rgba(120, 111, 166,1.0);
+    color: white;
     border-radius: 10px;
 }
+.delbtn:hover {
+    background-color: #e6d7ff;
+}
+
 
 table.zebra tr:nth-child(even) {
     background-color:#e6d7ff; /* fde4d0 */
 }
- 
  
 table.zebra {
     border-collapse: collapse;
@@ -77,4 +97,5 @@ table.zebra tr {
 table.zebra td * {
      padding: 10px 20px 10px 20px;
 }
+
 
