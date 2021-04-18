@@ -6,18 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MEBIS</title>
     <link rel="stylesheet" href="Header-Background.css">
-    <link rel="icon" href="MedipolBeyazLogo_40x40x24.png">
     <link rel="stylesheet" href="CreateCoursePage.css">
 </head>
 <body>
 
     <div class="header">
         <ul class="flex-header-container">
-            <li class="flex-header-item"><img class="header-logo" src="MedipolBeyazLogo_40x40x24.png" alt=""></li>
+            <li class="flex-header-item"><img class="header-logo" src="hlogo.jpg" alt=""></li>
             <li class="flex-header-item"><a href="SecretaryPage.html">Home</a></li>
-            <li class="flex-header-item"><a href="CoursesPage.html">Courses</a></li>
-            <li class="flex-header-item"><a href="SecretaryProfilePage.html">Name Lastname</a></li>
-            <li class="flex-header-item"><img class="header-img" src="ProfilePicture.webp" alt=""></li>
+            <li class="flex-header-item"><a class="active" href="CoursesPage.html">Courses</a></li>
+            <li class="flex-header-item"><p>Tugce Keskin</p><img class="header-img" src="profile.jpg" alt=""></li>
             <li class="flex-header-item"><a href="MainPage.html">Logout</a></li>
         </ul>
     </div>
@@ -31,23 +29,23 @@
        <h3>Course Information</h3>
 
        <p id="code">
-           Code <br>
+           Code: <br>
            <input type="text" name="user_name">
        </p>
 
        <p id="name">
-           Name <br>
+           Name: <br>
            <input type="text" name="user_name">
        </p>
  
        <p id="type">
-           Type <br>
+           Type: <br>
            <input type="radio" name="type" value="man">Mandatory<br>
            <input type="radio" name="type" value="elec">Elective<br>
        </p>
 
        <p id="inst">
-            Instructor <br>
+            Instructor: <br>
                <select name="instructor">
                    <option>Hasan Fehmi</option>
                    <option>Reda</option>
@@ -55,8 +53,8 @@
                </select>
        </p>
 
-       <p id="day">
-           Time <br>
+       <p id="time">
+           Time: <br>
            <select name="day">
                <option>Monday</option>
                <option>Tuesday</option>
@@ -69,7 +67,7 @@
            <input type="time" name="time">
        </p>
 
-       <input type="submit" value="Create">
+       <input id="sendbtn" type="submit" value="Create"> 
 
     </div>
 
