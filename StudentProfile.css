@@ -4,16 +4,20 @@ body{
 }
 
 .card {
+	box-shadow: 0 4px 8px 0 rgba(120, 111, 166,1.0); 
 	max-width: 300px;
 	margin: auto;
 	text-align: center;
-	
+	border-radius: 10px;
+	padding: 2em;
+	margin-top: 2em;
   }
   
   .title {
-	color: grey;
-	font-size: 18px;
-  }
+    color: grey;
+    font-size: 18px;
+    font-weight: bold;
+    } 
   
   .btn {
     background-color: rgba(120, 111, 166,1.0);
