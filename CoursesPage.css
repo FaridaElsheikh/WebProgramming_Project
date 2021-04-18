@@ -19,7 +19,7 @@ body{
     align-content: center;
 }
 
-.cbtn {
+.addbtn {
     background-color: rgba(120, 111, 166,1.0);
     border: none;
     color: white;
@@ -29,7 +29,7 @@ body{
     border-radius: 10px;
     margin-left: 20px;
 }
-.cbtn:hover {
+.addbtn:hover {
     background-color: #e6d7ff;
   }
 
