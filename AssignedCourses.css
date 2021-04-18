@@ -2,7 +2,8 @@ body{
   font-family:'Roboto', sans-serif;
 }
 .courses {
-  border: solid rgba(120, 111, 166,1.0);
+  box-shadow: 0px 4px 8px 0px rgba(120, 111, 166,1.0); 
+  padding: 10px;
   border-radius: 10px;
 }
 

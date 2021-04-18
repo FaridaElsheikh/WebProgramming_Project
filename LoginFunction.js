@@ -1,7 +1,6 @@
 function Login(){
     var radio=document.getElementsByName('tab');
     var value;
-    alert(radio.values)
     for(var i of radio) {
         if(i.checked){
             value=i.value;
