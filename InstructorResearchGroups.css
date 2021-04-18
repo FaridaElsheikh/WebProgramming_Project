@@ -3,9 +3,22 @@ body{
 }
 
 .courses {
-  border: solid rgba(120, 111, 166,1.0);
+  box-shadow: 0px 4px 8px 0px rgba(120, 111, 166,1.0); 
+  padding: 10px;
   border-radius: 10px;
 }
+.flex-option-container{
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  align-items: baseline;
+}
+
+.flex-option-item{
+  text-align: center;
+  align-content: center;
+}
+
 
 h1{
     font-size: 30px;
@@ -17,7 +30,7 @@ h1{
   }
 
 table.zebra tr:nth-child(even) {
-    background-color: #fde4d0;
+    background-color: #e6d7ff;
  }
  
  
@@ -29,12 +42,12 @@ table.zebra tr:nth-child(even) {
  }
  
  table.zebra th {
-     background: #f79646;
+     background: rgba(120, 111, 166,1.0);
      color: #fff;
      padding: 10px 3px;
      text-align: center;
-     border-right: 1px solid #f9b074;
-   border-left: 1px solid #f9b074;
+     border-right: 1px solid rgba(120, 111, 166,1.0);
+   border-left: 1px solid rgba(120, 111, 166,1.0);
      letter-spacing: 1px;
      font-weight: bold;
    text-transform: uppercase;
@@ -45,12 +58,12 @@ table.zebra tr:nth-child(even) {
  
  table.zebra td {
      padding: 10px 3px;
-     border-bottom: 1px solid #f9b074;
+     border-bottom: 1px solid rgba(120, 111, 166,1.0) ;
      vertical-align: middle;
      letter-spacing: .5px;
      text-align: center;
-   border-left: 1px solid #f9b074;
-     border-right: 1px solid #f9b074;
+   border-left: 1px solid rgba(120, 111, 166,1.0);
+     border-right: 1px solid rgba(120, 111, 166,1.0);
      
  }
  
