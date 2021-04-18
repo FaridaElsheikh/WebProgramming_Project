@@ -6,6 +6,7 @@ body{
     flex-direction: row;
     list-style-type: none;
     align-items: baseline;
+    
 
 }
 
@@ -30,8 +31,9 @@ body{
   }
 
   .content{
-    border: solid rgba(120, 111, 166,1.0);
+    box-shadow: 0 4px 8px 0 rgba(120, 111, 166,1.0); 
     border-radius: 10px;
+    padding: 10px;
   }
 .table{
     margin: 10px;
