@@ -1,4 +1,4 @@
-body{
+body {
 	margin:0;
 	color:grey;
 	background:#c8c8c8;
@@ -20,7 +20,7 @@ a{color:inherit;text-decoration:none}
 	box-shadow:0 12px 15px 0 rgba(120, 111, 166,1.0),0 17px 50px 0 rgba(120, 111, 166,1.0);
 }
 
-.login-html{
+.login-html {
 	width:100%;
 	height:100%;
 	position:absolute;
