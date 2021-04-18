@@ -7,7 +7,7 @@ h1 {
     color: rgb(112, 77, 151);
     text-transform: uppercase;
     font-weight: 300;
-    text-align: center;
+    text-align: left;
     margin-bottom: 15px;
   }
 
@@ -15,15 +15,6 @@ h1 {
     background-color:#f1eef7;
     box-shadow: 0 4px 8px 0 rgba(120, 111, 166,1.0); 
     border-radius: 10px;
-<<<<<<< HEAD
-    text-align: center;
-    max-width: 925px;
-=======
-    font-weight: bold;
-    position: relative;
-}
->>>>>>> 353770b6cd1e2db1134fdfea0b582c308290ca97
-
 }
 
 
@@ -52,10 +43,11 @@ h3 {
 	opacity: 0.7;
   }
 
-/*
 #code, #name, #type, #inst, #time {
+  font-weight: bold;
 }
-*/
+
+
 
 
 

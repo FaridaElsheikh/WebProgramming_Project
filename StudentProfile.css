@@ -5,21 +5,21 @@ body{
 
 .card {
 	box-shadow: 0 4px 8px 0 rgba(120, 111, 166,1.0); 
-	max-width: 300px;
+	max-width: 325px;
 	margin: auto;
 	text-align: center;
 	border-radius: 10px;
 	padding: 2em;
 	margin-top: 2em;
-  }
+}
   
-  .title {
+.title {
     color: grey;
     font-size: 18px;
     font-weight: bold;
-    } 
+} 
   
-  .btn {
+.btn {
     background-color: rgba(120, 111, 166,1.0);
     border: none;
     color: white;
@@ -27,13 +27,13 @@ body{
     cursor: pointer;
     border-radius: 10px;
     
-  }
+}
   
-  .btn:hover {
+.btn:hover {
     background-color: #e6d7ff;
-  }
+}
 
-  img {
+img {
       width: 100px;
       height: 100px;
-  }
+}
