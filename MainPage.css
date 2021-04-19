@@ -28,8 +28,8 @@ a{color:inherit;text-decoration:none}
 	background:#efe9f8; /* rgba(40,57,101,.9) */
 }
 
-.login-html .sign-in-htm,
-.login-html .sign-up-htm,
+.login-html .secretary-htm,
+.login-html .instructor-htm,
 .login-html .student-htm {
 	top:0;
 	left:0;
@@ -41,8 +41,8 @@ a{color:inherit;text-decoration:none}
 	transition:all .4s linear;
 }
 
-.login-html .sign-in,
-.login-html .sign-up,
+.login-html .secretary,
+.login-html .instructor,
 .login-html .student,
 .login-form .group .check {
 	display:none;
@@ -63,8 +63,8 @@ a{color:inherit;text-decoration:none}
 	border-bottom:2px solid transparent;
 }
 
-.login-html .sign-in:checked + .tab,
-.login-html .sign-up:checked + .tab,
+.login-html .secretary:checked + .tab,
+.login-html .instructor:checked + .tab,
 .login-html .student:checked + .tab {
 	color: rgb(0, 0, 0); /* #fff */
 	border-color:rgba(120, 111, 166,1.0);
@@ -163,10 +163,10 @@ a{color:inherit;text-decoration:none}
 	transform:scale(1) rotate(-45deg);
 }
 
-.login-html .sign-in:checked + .tab + .sign-up + .tab + .student + .tab + .login-form .sign-in-htm {
+.login-html .secretary:checked + .tab + .instructor + .tab + .student + .tab + .login-form .secretary-htm {
 	transform:rotate(0);
 }
-.login-html .sign-up:checked + .tab + .student + .tab +.login-form .sign-up-htm {
+.login-html .instructor:checked + .tab + .student + .tab +.login-form .instructor-htm {
 	transform:rotate(0);
 }
 
