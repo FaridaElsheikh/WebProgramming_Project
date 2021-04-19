@@ -17,6 +17,9 @@ h1 {
     border-radius: 10px;
 }
 
+.opt{
+  font-weight: normal;
+}
 
 h3 {
     color: grey;
@@ -42,8 +45,10 @@ h3 {
   #sendbtn:hover {
 	opacity: 0.7;
   }
-
-#code, #name, #type, #inst, #time {
+#opt{
+  font-weight: normal;
+}
+#code, #name, #type,#inst, #time {
   font-weight: bold;
 }
 
