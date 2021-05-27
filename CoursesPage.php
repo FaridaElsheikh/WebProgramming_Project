@@ -37,7 +37,8 @@
                 <th>Course Type</th>
                 <th>Course Instructor</th>
                 <th>Corse Credit</th>
-                <th>Course Time</th>
+                <th>Course Day</th>
+                <th>Course Hour</th>
                 <th>Option</th>
             </tr>
 
@@ -53,7 +54,7 @@
                     die("Connection failed " . mysqli_connect_error());
                 }
 
-                $sql = "SELECT course_code, course_name, course_type, course_instructor, course_credit, course_time FROM courses";
+                $sql = "SELECT course_code, course_name, course_type, course_instructor, course_credit, course_day, course_hour FROM courses";
                 $result = mysqli_query($conn, $sql);
 
                 if (mysqli_num_rows($result) > 0) {
@@ -65,7 +66,8 @@
                                 "<td>" . $row['course_type'] . "</td>" .
                                 "<td>" . $row['course_instructor'] . "</td>" .
                                 "<td>" . $row['course_credit'] . "</td>" .
-                                "<td>" . $row['course_time'] . "</td>" .
+                                "<td>" . $row['course_day'] . "</td>" .
+                                "<td>" . $row['course_hour'] . "</td>" .
                             "</tr>";
                     }
                     echo "</table>";

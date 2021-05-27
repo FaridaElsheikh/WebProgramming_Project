@@ -8,7 +8,8 @@
         $c_type = $_POST['c_type'];
         $c_instructor = $_POST['c_instructor'];
         $c_credit = $_POST['c_credit'];
-        $c_time = $_POST['c_time'];
+        $c_day = $_POST['c_day'];
+        $c_hour = $_POST['c_hour'];
 
         // Connect to database
         $conn = mysqli_connect($server, $user, $password, $database);
@@ -19,9 +20,9 @@
         }
 
         // Prepare an insert statement
-        $query = "INSERT INTO courses (course_code, course_name, course_type, course_instructor, course_credit, course_time) VALUES (?,?,?,?,?,?)";        
+        $query = "INSERT INTO courses (course_code, course_name, course_type, course_instructor, course_credit, course_day, course_hour) VALUES (?,?,?,?,?,?,?)";        
         $statement = mysqli_prepare($conn, $query);
-        mysqli_stmt_bind_param($statement, 'ssssss', $c_code, $c_name, $c_type, $c_instructor, $c_time);
+        mysqli_stmt_bind_param($statement, 'isssiss', $c_code, $c_name, $c_type, $c_instructor, $c_credit, $c_day, $c_hour);
 
         // Execute the prepared statement
         mysqli_stmt_execute($statement);
@@ -32,6 +33,7 @@
         echo "Course Name:" . $c_name . "<br>";
         echo "Course Type:" . $c_type . "<br>";
         echo "Course Instructor:" . $c_instructor . "<br>";
+        echo "Course Credit:" . $c_credit . "<br>";
         echo "Course Day:" . $c_day . "<br>";
         echo "Course Hour:" . $c_hour . "<br>";
 
@@ -115,7 +117,16 @@
 
        <p id="time">
            Time: <br>
-            <input type="time" name="c_time">
+           <select name="c_day">
+               <option>Monday</option>
+               <option>Tuesday</option>
+               <option>Wednesday</option>
+               <option>Thursday</option>
+               <option>Friday</option>
+               <option>Saturday</option>
+           </select>
+
+           <input type="time" name="c_hour">
        </p>
 
        <input id="sendbtn" type="submit" name="create" value="Create"> 
