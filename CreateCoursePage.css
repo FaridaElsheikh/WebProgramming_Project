@@ -48,7 +48,7 @@ h3 {
 #opt{
   font-weight: normal;
 }
-#code, #name, #type,#inst, #time {
+#code, #name, #type,#inst, #time, #cred {
   font-weight: bold;
 }
 
