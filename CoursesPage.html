@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEBIS</title>
+    <link rel="stylesheet" href="Header-Background.css">
+    <link rel="stylesheet" href="CoursesPage.css">
+</head>
+<body>
+
+    <div class="header">
+        <ul class="flex-header-container">
+            <li class="flex-header-item"><img class="header-logo" src="logo.jpg" alt=""></li>
+            <li class="flex-header-item"><a href="SecretaryPage.html">Home</a></li>
+            <li class="flex-header-item"><a class="active" href="CoursesPage.html">Courses</a></li>
+            <li class="flex-header-item"><p>Tugce Keskin</p><img class="header-img" src="profile.jpg" alt=""></li>
+            <li class="flex-header-item"><a href="MainPage.html">Logout</a></li>
+        </ul>
+    </div>
+  
+    <div class="courses">
+        <div class="option-bar">
+            <ul class="flex-option-container">
+                <li class="flex-option-item"><h1>Courses</h1></li>
+                <li class="flex-option-item"><a href="CreateCoursePage.html"><button class="addbtn">Create</button></a></li>
+                <li class="flex-option-item"><a href="./material/Project.pdf"><button class="dowbtn"><i class="fa fa-download"></i>Download</button></a></li>
+            </ul>
+        </div>
+        
+        <table class="zebra">
+            <tr>
+                <th>Course Code</th>
+                <th>Course Name</th>
+                <th>Course Type</th>
+                <th>Course Instructor</th>
+                <th>Credits</th>
+                <th>Course Time</th>
+                <th>Option</th>
+            </tr>
+            <tr>
+                <td>COE536</td>
+                <td>Deep</td>
+                <td>Elective</td>
+                <td>Hasan Fehmi</td>
+                <td>6</td>
+                <td>Tuesday 09:00-12:00</td>
+                <td><button class="delbtn">Delete</button></td>
+            </tr>
+            <tr>
+                <td>COE526</td>
+                <td>Web</td>
+                <td>Elective</td>
+                <td>Reda</td>
+                <td>6</td>
+                <td>Tuesday 13:00-16:00</td>
+                <td><button class="delbtn">Delete</button></td>
+            </tr>
+            <tr>
+                <td>COE516</td>
+                <td>Probability</td>
+                <td>Mandatory</td>
+                <td>Kemal</td>
+                <td>6</td>
+                <td>Monday 10:00-13:00</td>
+                <td><button class="delbtn">Delete</button></td>
+            </tr>
+        </table>
+
+        <!-- <input type="file" name="cv_file"> --> 
+
+        <br>
+        
+    </div>
+
+
+    
+</body>
+</html>

@@ -26,7 +26,7 @@
             
             <li class="flex-header-item"><a href="./StudentResearchGroup.php">Research Groups</a></li>
             <li class="flex-header-item"><p>Farida Elsheikh</p><img class="header-img" src="./profile.jpg" alt=""></li>
-            <li class="flex-header-item"><a href="./MainPage.html">Logout</a></li>
+            <li class="flex-header-item"><a href="./MainPage.php">Logout</a></li>
         </ul>
     </div>
    
