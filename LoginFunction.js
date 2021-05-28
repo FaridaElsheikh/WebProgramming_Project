@@ -17,3 +17,15 @@ function Login(){
     }
     
 }
+function signin(){
+    var radio=document.getElementById('logntype');
+    if(radio.value =='student'){
+        window.location.replace("./StudentPage.html");
+    }
+    else if(radio.value=='instructor'){
+        window.location.replace("./InstructorPage.html");
+    }
+    else if(radio.value=='secretary') {
+        window.location.replace("./SecretaryPage.html");
+    }
+}
