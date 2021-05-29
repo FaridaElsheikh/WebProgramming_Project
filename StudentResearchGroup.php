@@ -179,7 +179,7 @@
         }
 
         
-        $sql = 'SELECT id  FROM  research_group WHERE username=? ';
+        $sql = 'SELECT id  FROM  research_group WHERE i_username=? ';
         $stmt = mysqli_prepare($conn, $sql);
         mysqli_stmt_bind_param($stmt,'s', $iusername);
         mysqli_stmt_execute($stmt);

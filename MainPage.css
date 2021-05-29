@@ -160,7 +160,7 @@ a{color:inherit;text-decoration:none}
 	transform:scale(1) rotate(45deg);
 }
 .login-form .group .check:checked + label .icon:after {
-	transform:scale(1) rotate(-45deg);
+	transform:scale(1) rotate(-360deg);
 }
 
 .login-html .secretary:checked + .tab + .instructor + .tab + .student + .tab + .login-form .secretary-htm {
