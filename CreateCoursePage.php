@@ -1,5 +1,38 @@
 <?php
 
+    session_start();
+    $sec_username=($_SESSION['username']);
+    require_once('config.php');
+                
+    // Connect to database
+    $conn = mysqli_connect($server, $user, $password, $database);
+
+    // Check connection
+    if (!$conn) {
+        die("Connection failed " . mysqli_connect_error());
+    }
+
+    $sql = 'SELECT fname, lname FROM secretary WHERE username =?';
+              
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt,'s', $sec_username);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_bind_result($stmt, $fname, $lname);
+    mysqli_stmt_fetch($stmt);
+
+                
+    print(mysqli_stmt_error($stmt) . "\n");
+
+    // Close the statement and the connection
+    mysqli_stmt_close($stmt);
+        
+    mysqli_close($conn);
+
+?>
+
+
+<?php
+
     require_once('config.php');
 
     if (isset($_POST['create'])) {
@@ -151,6 +184,8 @@
            </select>
 
            <input type="time" name="c_hour" required>
+
+           select ... from courses where day=put here the day variable and time=put the time varibale
        </p>
 
        <input id="sendbtn" type="submit" name="create" value="Create"> 
