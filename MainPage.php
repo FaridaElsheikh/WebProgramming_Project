@@ -93,6 +93,8 @@
 
 				$_SESSION['username'] = $username;
 				
+				$_SESSION['username'] = $username;
+				
 				if($tablename=='student'){
 					header( 'Location: StudentPage.php' );
 				}
@@ -223,7 +225,7 @@
 		<div class="login-html">
 			<input id="tab-1" type="radio" name="tab" class="secretary" value="signin" checked><label for="tab-1" class="tab">Sign in</label>
 			<input id="tab-2" type="radio" name="tab" class="instructor" value="signup"><label for="tab-2" class="tab">Sign up</label>
-			<input id="tab-3" type="radio" name="tab" class="student" value="student"><label for="tab-3" class="tab"></label>
+			<input id="tab-3" type="radio" name="tab" class="student" value="student"><label for="tab-3" class="tab">Student</label>
 			<div class="login-form">
 
 				<div class="secretary-htm">
@@ -302,7 +304,6 @@
 					<div class="hr"></div>				
 				</div>
 
-				
 			</div>
 		</div>
 	</div>
