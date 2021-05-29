@@ -47,7 +47,7 @@
             <li class="flex-header-item"><img class="header-logo" src="logo.jpg" alt=""></li>
             <li class="flex-header-item"><a class="active" href="SecretaryPage.php">Home</a></li>
             <li class="flex-header-item"><a href="CoursesPage.php">Courses</a></li>
-            <li class="flex-header-item"><p>Tugce Keskin</p><img class="header-img" src="profile.jpg" alt=""></li>
+            <li class="flex-header-item"><p><?php echo $fname.' ' .$lname;?></p><img class="header-img" src="profile.jpg" alt=""></li>
             <li class="flex-header-item"><a href="MainPage.php">Logout</a></li>
         </ul>
     </div>
