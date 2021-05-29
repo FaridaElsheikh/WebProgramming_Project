@@ -1,3 +1,4 @@
+<!-- HELLO FROM THE OTHER SIDE !!  -->
 <?php
 	require_once('config.php');
 	session_start();
