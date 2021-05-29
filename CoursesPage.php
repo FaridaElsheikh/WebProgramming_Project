@@ -44,7 +44,7 @@
 
             <?php
 
-                require_once('connect.php');
+                require_once('config.php');
 
                 // Connect to database
                 $conn = mysqli_connect($server, $user, $password, $database);
@@ -68,6 +68,7 @@
                                 "<td>" . $row['course_credit'] . "</td>" .
                                 "<td>" . $row['course_day'] . "</td>" .
                                 "<td>" . $row['course_hour'] . "</td>" .
+                                '<td class="delete"  ><button class="delbtn" name="delete" value='.$row['course_code'].'>Delete</button></td>' .
                             "</tr>";
                     }
                     echo "</table>";

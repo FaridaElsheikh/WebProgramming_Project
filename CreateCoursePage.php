@@ -1,6 +1,6 @@
 <?php
 
-    require_once('connect.php');
+    require_once('config.php');
 
     if (isset($_POST['create'])) {
         $c_code = $_POST['c_code']; // coursecode = c_code
