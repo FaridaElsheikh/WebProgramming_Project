@@ -78,19 +78,19 @@
 
        <p id="code">
            Code: <br>
-           <input type="text" name="c_code"> 
+           <input type="text" name="c_code" required> 
        </p>
 
        <p id="name">
            Name: <br>
-           <input type="text" name="c_name">
+           <input type="text" name="c_name" required>
        </p>
  
        <p id="type">
            Type: <br>
            <div id="opt">
-            <input class="opt" type="radio" name="c_type" value="Mandatory">Mandatory<br> 
-            <input class="opt" type="radio" name="c_type" value="Elective">Elective<br>
+            <input class="opt" type="radio" name="c_type" value="Mandatory" required>Mandatory<br> 
+            <input class="opt" type="radio" name="c_type" value="Elective" required>Elective<br>
            </div>
        </p>
 
@@ -127,7 +127,7 @@
 
        <p id="cred">
             Credit: <br>
-               <select name="c_credit">
+               <select name="c_credit" required>
                    <option>1</option>
                    <option>2</option>
                    <option>3</option>
@@ -141,7 +141,7 @@
 
        <p id="time">
            Time: <br>
-           <select name="c_day">
+           <select name="c_day" required>
                <option>Monday</option>
                <option>Tuesday</option>
                <option>Wednesday</option>
@@ -150,7 +150,7 @@
                <option>Saturday</option>
            </select>
 
-           <input type="time" name="c_hour">
+           <input type="time" name="c_hour" required>
        </p>
 
        <input id="sendbtn" type="submit" name="create" value="Create"> 
