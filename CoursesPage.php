@@ -37,9 +37,8 @@
                 <th>Course Type</th>
                 <th>Course Instructor</th>
                 <th>Corse Credit</th>
-                <th>Course Day</th>
-                <th>Course Hour</th>
-                <th>Option</th>
+                <th colspan="2">Course Time</th>
+                <th></th>
             </tr>
 
             <?php
@@ -68,7 +67,7 @@
                                 "<td>" . $row['course_credit'] . "</td>" .
                                 "<td>" . $row['course_day'] . "</td>" .
                                 "<td>" . $row['course_hour'] . "</td>" .
-                                '<td class="delete"  ><button class="delbtn" name="delete" value='.$row['course_code'].'>Delete</button></td>' .
+                                '<td class="delete"><button class="delbtn" name="delete" value='.$row['course_code'].'>Delete</button></td>' .
                             "</tr>";
                     }
                     echo "</table>";
@@ -88,7 +87,43 @@
         
     </div>
 
-
-    
 </body>
 </html>
+
+
+    <?php
+
+    require_once('config.php');
+    
+    if (isset($_POST['delete'])) {
+
+        $c_code = $_POST['delete'];
+
+        // Connect to database
+        $conn = mysqli_connect($server, $user, $password, $database);
+
+        // Check connection
+        if (!$conn) {
+            die("Connection failed " . mysqli_connect_error());
+        }
+        
+        $query = "DELETE FROM courses WHERE course_code = ?"; 
+             
+        $statement = mysqli_prepare($conn, $query);
+        
+        mysqli_stmt_bind_param($statement, 'i', $c_code);
+
+        // Execute the prepared statement
+        mysqli_stmt_execute($statement);
+        print(mysqli_stmt_error($statement) . "\n");
+
+        // Close the statement and the connection
+        mysqli_stmt_close($statement);
+        
+        mysqli_close($conn);
+    }
+
+?>
+
+
+    

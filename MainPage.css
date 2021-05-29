@@ -29,7 +29,8 @@ a{color:inherit;text-decoration:none}
 }
 
 .login-html .secretary-htm,
-.login-html .instructor-htm {
+.login-html .instructor-htm,
+.login-html .student-htm {
 	top:0;
 	left:0;
 	right:0;
@@ -42,6 +43,7 @@ a{color:inherit;text-decoration:none}
 
 .login-html .secretary,
 .login-html .instructor,
+.login-html .student,
 .login-form .group .check {
 	display:none;
 }
@@ -62,7 +64,8 @@ a{color:inherit;text-decoration:none}
 }
 
 .login-html .secretary:checked + .tab,
-.login-html .instructor:checked + .tab {
+.login-html .instructor:checked + .tab,
+.login-html .student:checked + .tab {
 	color: rgb(0, 0, 0); /* #fff */
 	border-color:rgba(120, 111, 166,1.0);
 }
@@ -154,20 +157,22 @@ a{color:inherit;text-decoration:none}
 }
 
 .login-form .group .check:checked + label .icon:before {
-	transform:scale(1) rotate(360deg);
+	transform:scale(1) rotate(45deg);
 }
 .login-form .group .check:checked + label .icon:after {
-	transform:scale(1) rotate(-360deg);
+	transform:scale(1) rotate(-45deg);
 }
 
-.login-html .secretary:checked + .tab + .instructor + .tab + .login-form .secretary-htm {
+.login-html .secretary:checked + .tab + .instructor + .tab + .student + .tab + .login-form .secretary-htm {
 	transform:rotate(0);
 }
-.login-html .instructor:checked + .tab + .login-form .instructor-htm {
+.login-html .instructor:checked + .tab + .student + .tab +.login-form .instructor-htm {
 	transform:rotate(0);
 }
 
-
+.login-html .student:checked + .tab + .login-form .student-htm {
+	transform:rotate(0);
+}
 
 .hr {
 	height:2px;

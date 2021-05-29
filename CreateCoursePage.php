@@ -10,6 +10,7 @@
         $c_credit = $_POST['c_credit'];
         $c_day = $_POST['c_day'];
         $c_hour = $_POST['c_hour'];
+        $s_username = 'tugcekeskin';
 
         // Connect to database
         $conn = mysqli_connect($server, $user, $password, $database);
@@ -20,9 +21,9 @@
         }
 
         // Prepare an insert statement
-        $query = "INSERT INTO courses (course_code, course_name, course_type, course_instructor, course_credit, course_day, course_hour) VALUES (?,?,?,?,?,?,?)";        
+        $query = "INSERT INTO courses (course_code, course_name, course_type, course_instructor, course_credit, course_day, course_hour, s_username) VALUES (?,?,?,?,?,?,?,?)";        
         $statement = mysqli_prepare($conn, $query);
-        mysqli_stmt_bind_param($statement, 'isssiss', $c_code, $c_name, $c_type, $c_instructor, $c_credit, $c_day, $c_hour);
+        mysqli_stmt_bind_param($statement, 'isssisss', $c_code, $c_name, $c_type, $c_instructor, $c_credit, $c_day, $c_hour, $s_username); // coursecode
 
         // Execute the prepared statement
         mysqli_stmt_execute($statement);
@@ -36,6 +37,7 @@
         echo "Course Credit:" . $c_credit . "<br>";
         echo "Course Day:" . $c_day . "<br>";
         echo "Course Hour:" . $c_hour . "<br>";
+        echo "Course created by:" . $s_username . "<br>";
 
         // Close the statement and the connection
         mysqli_stmt_close($statement);
@@ -87,19 +89,41 @@
        <p id="type">
            Type: <br>
            <div id="opt">
-            <input class="opt" type="radio" name="c_type" value="man">Mandatory<br>
-            <input class="opt" type="radio" name="c_type" value="elec">Elective<br>
+            <input class="opt" type="radio" name="c_type" value="Mandatory">Mandatory<br> 
+            <input class="opt" type="radio" name="c_type" value="Elective">Elective<br>
            </div>
        </p>
 
        <p id="inst">
-            Instructor: <br>
-               <select name="c_instructor">
-                   <option>Hasan Fehmi</option>
-                   <option>Reda</option>
-                   <option>Kemal</option>
-               </select>
-       </p>
+                    Instructor: <br>
+                    <select name="c_instructor" required>
+                        <?php
+                            require_once('config.php');
+
+                            // Connect to database
+                            $conn = mysqli_connect($server, $user, $password, $database);
+
+                            // Check connection
+                            if (!$conn) {
+                                die("Connection failed " . mysqli_connect_error());
+                            }
+
+                            $sql = "SELECT fname,lname,username FROM instructor";
+                            $result = mysqli_query($conn, $sql);
+
+                            if (mysqli_num_rows($result) > 0) {
+                            // Output data of each row
+                            while($row = mysqli_fetch_assoc($result)) {
+                                echo 
+                                    "<option  value='".$row['username'] ."' >" . $row['fname'] ." ". $row['lname']. "</option>" ;                               
+                            }
+                            } else {
+                                echo "No results";
+                            }
+                            mysqli_close($conn);
+                        ?>
+                        </select>
+            </p>
 
        <p id="cred">
             Credit: <br>
