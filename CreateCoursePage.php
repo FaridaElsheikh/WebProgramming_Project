@@ -96,7 +96,7 @@
             <li class="flex-header-item"><img class="header-logo" src="logo.jpg" alt=""></li>
             <li class="flex-header-item"><a href="SecretaryPage.php">Home</a></li>
             <li class="flex-header-item"><a class="active" href="CoursesPage.php">Courses</a></li>
-            <li class="flex-header-item"><p><?php echo $fname.' ' .$lname;?></p><img class="header-img" src="profile.jpg" alt=""></li>
+            <li class="flex-header-item"><?php echo $fname.' ' .$lname;?></li>
             <li class="flex-header-item"><a href="MainPage.php">Logout</a></li>
         </ul>
     </div>

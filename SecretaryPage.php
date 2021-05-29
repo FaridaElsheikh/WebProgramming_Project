@@ -47,14 +47,14 @@
             <li class="flex-header-item"><img class="header-logo" src="logo.jpg" alt=""></li>
             <li class="flex-header-item"><a class="active" href="SecretaryPage.php">Home</a></li>
             <li class="flex-header-item"><a href="CoursesPage.php">Courses</a></li>
-            <li class="flex-header-item"><p><?php echo $fname.' ' .$lname;?></p><img class="header-img" src="profile.jpg" alt=""></li>
+            <li class="flex-header-item"><?php echo $fname.' ' .$lname;?></li>
             <li class="flex-header-item"><a href="MainPage.php">Logout</a></li>
         </ul>
     </div>
 
     <div class="card">
-        <img src="secretary.png" alt="tk">
-        <h1>Tugce Keskin</h1>
+        <!-- <img src="secretary.png" alt="tk"> -->
+        <h1><?php echo $fname.' ' .$lname;?></h1>
         <p class="title">Faculty Secretary</p>
         <p>School of Engineering and Natural Sciences</p>
         <a href="#"><i class="fa fa-linkedin"></i></a> 
