@@ -56,14 +56,14 @@
                     die("Connection failed " . mysqli_connect_error());
                 }
 
-                $sql = "SELECT ifirst_name,ilast_name,iusername FROM instructor";
+                $sql = "SELECT fname,lname,username FROM instructor";
                 $result = mysqli_query($conn, $sql);
 
                 if (mysqli_num_rows($result) > 0) {
                     // Output data of each row
                     while($row = mysqli_fetch_assoc($result)) {
                         echo 
-                            "<option  value='".$row['iusername'] ."' >" . $row['ifirst_name'] ." ". $row['ilast_name']. "</option>" ;
+                            "<option  value='".$row['username'] ."' >" . $row['fname'] ." ". $row['lname']. "</option>" ;
                             
                     }
                 } else {
@@ -105,15 +105,15 @@
                             die("Connection failed " . mysqli_connect_error());
                         }
 
-                        $sql = "SELECT ifirst_name,ilast_name,research_area FROM  instructor WHERE research_area!='NULL' ";
+                        $sql = "SELECT fname,lname,research_area FROM  instructor WHERE research_area!='NULL' ";
                         $result = mysqli_query($conn, $sql);
 
                         if (mysqli_num_rows($result) > 0) {
                             // Output data of each row
                             while($row = mysqli_fetch_assoc($result)) {
                                 echo "<tr>" .
-                                        "<td>" . $row['ifirst_name'] . "</td>" .
-                                        "<td>" . $row['ilast_name'] . "</td>" .
+                                        "<td>" . $row['fname'] . "</td>" .
+                                        "<td>" . $row['lname'] . "</td>" .
                                         "<td>" . $row['research_area'] . "</td>" .
                                     "</tr>";
                             }
