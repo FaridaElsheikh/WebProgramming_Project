@@ -1,3 +1,33 @@
+<?php
+    session_start();
+    $st_username=($_SESSION['username']);
+    require_once('config.php');
+                
+    // Connect to database
+    $conn = mysqli_connect($server, $user, $password, $database);
+
+    // Check connection
+    if (!$conn) {
+        die("Connection failed " . mysqli_connect_error());
+    }
+
+    $sql = 'SELECT fname,lname,st_id,gpa,class FROM student WHERE username =?';
+
+                
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt,'s', $st_username);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_bind_result($stmt, $fname,$lname,$st_id,$gpa,$class);
+    mysqli_stmt_fetch($stmt);
+
+                
+    print(mysqli_stmt_error($stmt) . "\n");
+
+    // Close the statement and the connection
+    mysqli_stmt_close($stmt);
+        
+    mysqli_close($conn);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,17 +53,17 @@
             </div></li>
             
             <li class="flex-header-item"><a href="./StudentResearchGroup.php">Research Groups</a></li>
-            <li class="flex-header-item"><p>Farida Elsheikh</p><img class="header-img" src="./profile.jpg" alt=""></li>
+            <li class="flex-header-item"><p><?php echo $fname.' ' .$lname;?></p><img class="header-img" src="./profile.jpg" alt=""></li>
             <li class="flex-header-item"><a href="./MainPage.php">Logout</a></li>
         </ul>
     </div>
 
     <div class="card">
         <img src="./student.jpg">
-        <h1>Farida Elsheikh</h1>
-        <p class="title">Junior / 3rd Year</p>
+        <h1><?php echo $fname.' ' .$lname;?></h1>
+        <p class="title"><?php echo $class;?> Year</p>
         <p>School of Engineering and Natural Sciences</p>
-        <p>GPA: 3.5 </p> 
+        <p>GPA: <?php echo $gpa;?> </p> 
         <a href="./material/Project.pdf"><button class="btn">Download Transcript</button></a>
     </div>
 </body>

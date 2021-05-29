@@ -1,3 +1,33 @@
+<?php
+    session_start();
+    $st_username=($_SESSION['username']);
+    require_once('config.php');
+                
+    // Connect to database
+    $conn = mysqli_connect($server, $user, $password, $database);
+
+    // Check connection
+    if (!$conn) {
+        die("Connection failed " . mysqli_connect_error());
+    }
+
+    $sql = 'SELECT fname,lname,st_id,gpa,class FROM student WHERE username =?';
+
+                
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt,'s', $st_username);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_bind_result($stmt, $fname,$lname,$st_id,$gpa,$class);
+    mysqli_stmt_fetch($stmt);
+
+                
+    print(mysqli_stmt_error($stmt) . "\n");
+
+    // Close the statement and the connection
+    mysqli_stmt_close($stmt);
+        
+    mysqli_close($conn);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +42,7 @@
     <div class="header">
         <ul class="flex-header-container">
             <li class="flex-header-item"><img class="header-logo" src="./logo.jpg" alt=""></li>
-            <li class="flex-header-item"><a href="./StudentPage.html">Home</a></li>
+            <li class="flex-header-item"><a href="./StudentPage.php">Home</a></li>
             <li class="flex-header-item"><div class="dropdown">
                 <a a class="active" href="">Courses</a>
                 <div class="dropdown-content">
@@ -22,7 +52,7 @@
             </div></li>
             
             <li class="flex-header-item"><a href="./StudentResearchGroup.php">Research Groups</a></li>
-            <li class="flex-header-item"><p>Farida Elsheikh</p><img class="header-img" src="./profile.jpg" alt=""></li>
+            <li class="flex-header-item"><p><?php echo $fname.' ' .$lname;?></p><img class="header-img" src="./profile.jpg" alt=""></li>
             <li class="flex-header-item"><a href="./MainPage.php">Logout</a></li>
         </ul>
     </div>

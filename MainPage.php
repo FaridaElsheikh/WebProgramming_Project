@@ -1,5 +1,6 @@
 <?php
 	require_once('config.php');
+	session_start();
     $username = $pass = $fname =$lname= '';
     $errors = array('fname1'=>'','lname1'=>'','username1'=>'', 'password1'=>'','choice1'=>'',
 					'fname2'=>'','lname2'=>'','username2'=>'', 'password2'=>'','choice2'=>'','other'=>'');
@@ -89,9 +90,11 @@
 				// Close the statement and the connection
 				mysqli_stmt_close($statement);
 				mysqli_close($conn);
+
+				$_SESSION['username'] = $username;
 				
 				if($tablename=='student'){
-					header( 'Location: StudentPage.html' );
+					header( 'Location: StudentPage.php' );
 				}
 				elseif($tablename=='instructor'){
 					header( 'Location: InstructorPage.html' );
@@ -162,8 +165,9 @@
 				}
 				if ($resultu!=Null and $resultp!=Null) {
 						if($resultp==$pass){
+							$_SESSION['username'] = $username;
 							if($tablename=='student'){
-								header( 'Location: StudentPage.html' );
+								header( 'Location: StudentPage.php' );
 							}
 							elseif($tablename=='instructor'){
 								header( 'Location: InstructorPage.html' );

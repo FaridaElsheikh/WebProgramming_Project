@@ -1,3 +1,33 @@
+<?php
+    session_start();
+    $st_username=($_SESSION['username']);
+    require_once('config.php');
+                
+    // Connect to database
+    $conn = mysqli_connect($server, $user, $password, $database);
+
+    // Check connection
+    if (!$conn) {
+        die("Connection failed " . mysqli_connect_error());
+    }
+
+    $sql = 'SELECT fname,lname,st_id,gpa,class FROM student WHERE username =?';
+
+                
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt,'s', $st_username);
+    mysqli_stmt_execute($stmt);
+    mysqli_stmt_bind_result($stmt, $fname,$lname,$st_id,$gpa,$class);
+    mysqli_stmt_fetch($stmt);
+
+                
+    print(mysqli_stmt_error($stmt) . "\n");
+
+    // Close the statement and the connection
+    mysqli_stmt_close($stmt);
+        
+    mysqli_close($conn);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +45,7 @@
     <div class="header">
         <ul class="flex-header-container">
             <li class="flex-header-item"><img class="header-logo" src="./logo.jpg" alt=""></li>
-            <li class="flex-header-item"><a href="./StudentPage.html">Home</a></li>
+            <li class="flex-header-item"><a href="./StudentPage.php">Home</a></li>
             <li class="flex-header-item"><div class="dropdown">
                 <a a class="active" href="">Courses</a>
                 <div class="dropdown-content">
@@ -25,12 +55,11 @@
             </div></li>
             
             <li class="flex-header-item"><a href="./StudentResearchGroup.php">Research Groups</a></li>
-            <li class="flex-header-item"><p>Farida Elsheikh</p><img class="header-img" src="./profile.jpg" alt=""></li>
+            <li class="flex-header-item"><p><?php echo $fname.' ' .$lname;?></p><img class="header-img" src="./profile.jpg" alt=""></li>
             <li class="flex-header-item"><a href="./MainPage.php">Logout</a></li>
         </ul>
     </div>
    
-
     <div class="content">
 
         <div class="option-bar">
@@ -91,7 +120,7 @@
                 </tr>
                 <?php
                 require_once('config.php');
-                $test='farida';
+                
                 // Connect to database
                 $conn = mysqli_connect($server, $user, $password, $database);
 
@@ -100,8 +129,17 @@
                     die("Connection failed " . mysqli_connect_error());
                 }
 
-                $sql = 'SELECT code , course_name, course_type FROM takes , courses  WHERE code=course_code  AND st_username ="TestStudent"';
-                $result = mysqli_query($conn, $sql);
+                $sql = 'SELECT code , course_name, course_type FROM takes , courses  WHERE code=course_code  AND st_username =?';
+                //$stmt = mysqli_query($conn, $sql);
+
+
+                $stmt = mysqli_prepare($conn, $sql);
+                mysqli_stmt_bind_param($stmt,'s', $st_username);
+                mysqli_stmt_execute($stmt);
+                print(mysqli_stmt_error($stmt) . "\n");
+                $result=mysqli_stmt_get_result($stmt);
+
+
                 if (mysqli_num_rows($result) > 0) {
                     // Output data of each row
                     while($row = mysqli_fetch_assoc($result)) {
@@ -133,7 +171,6 @@
     require_once('config.php');
 
     if (isset($_POST['add'])) {
-        $st_username='TestStudent';
         $course_opt = $_POST['course_opt'];
 
         // Connect to database
@@ -172,8 +209,6 @@
     }
     
     if (isset($_POST['delete'])) {
-
-        $st_username='TestStudent';
         $code = $_POST['delete'];
 
         // Connect to database
