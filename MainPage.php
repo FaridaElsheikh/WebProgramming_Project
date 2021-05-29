@@ -100,7 +100,7 @@
 					header( 'Location: InstructorPage.html' );
 				}
 				else{
-					header( 'Location: SecretaryPage.html' );
+					header( 'Location: SecretaryPage.php' );
 				}
 			}
 		}
@@ -173,7 +173,7 @@
 								header( 'Location: InstructorPage.html' );
 							}
 							else{
-								header( 'Location: SecretaryPage.html' );
+								header( 'Location: SecretaryPage.php' );
 							}
 						}
 						else{
