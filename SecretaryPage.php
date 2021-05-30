@@ -47,8 +47,12 @@
             <li class="flex-header-item"><img class="header-logo" src="logo.jpg" alt=""></li>
             <li class="flex-header-item"><a class="active" href="SecretaryPage.php">Home</a></li>
             <li class="flex-header-item"><a href="CoursesPage.php">Courses</a></li>
-            <li class="flex-header-item"><?php echo $fname.' ' .$lname;?></li>
-            <li class="flex-header-item"><a href="MainPage.php">Logout</a></li>
+            <li class="flex-header-item"><div class="dropdown">
+                <a href=""><?php echo $fname.' ' .$lname;?></a>
+                <div class="dropdown-content">
+                    <a href="MainPage.php">Logout</a>
+                </div>
+            </div></li>
         </ul>
     </div>
 
@@ -57,8 +61,6 @@
         <h1><?php echo $fname.' ' .$lname;?></h1>
         <p class="title">Faculty Secretary</p>
         <p>School of Engineering and Natural Sciences</p>
-        <a href="#"><i class="fa fa-linkedin"></i></a> 
-        <a href="mailto:tugcekeskin@std.medipol.edu.tr"><button id="mailbtn">Send Email</button></a>
       
     </div>
     

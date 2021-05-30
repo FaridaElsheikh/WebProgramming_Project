@@ -65,12 +65,12 @@
         
         <table class="zebra">
             <tr>
-                <th>Course Code</th>
-                <th>Course Name</th>
-                <th>Course Type</th>
-                <th>Course Instructor</th>
-                <th>Corse Credit</th>
-                <th colspan="2">Course Time</th>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Instructor</th>
+                <th>Credit</th>
+                <th colspan="2">Time</th>
                 <th></th>
             </tr>
 
