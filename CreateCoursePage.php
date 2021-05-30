@@ -43,7 +43,6 @@
         $c_credit = $_POST['c_credit'];
         $c_day = $_POST['c_day'];
         $c_hour = $_POST['c_hour'];
-        $s_username = 'tugcekeskin';
 
         // Connect to database
         $conn = mysqli_connect($server, $user, $password, $database);
@@ -56,21 +55,11 @@
         // Prepare an insert statement
         $query = "INSERT INTO courses (course_code, course_name, course_type, course_instructor, course_credit, course_day, course_hour, s_username) VALUES (?,?,?,?,?,?,?,?)";        
         $statement = mysqli_prepare($conn, $query);
-        mysqli_stmt_bind_param($statement, 'isssisss', $c_code, $c_name, $c_type, $c_instructor, $c_credit, $c_day, $c_hour, $s_username); // coursecode
+        mysqli_stmt_bind_param($statement, 'isssisss', $c_code, $c_name, $c_type, $c_instructor, $c_credit, $c_day, $c_hour, $sec_username); // coursecode
 
         // Execute the prepared statement
         mysqli_stmt_execute($statement);
         print(mysqli_stmt_error($statement) . "\n");
-
-        echo "Course created successfully <br>";
-        echo "Cours Code:" . $c_code . "<br>";
-        echo "Course Name:" . $c_name . "<br>";
-        echo "Course Type:" . $c_type . "<br>";
-        echo "Course Instructor:" . $c_instructor . "<br>";
-        echo "Course Credit:" . $c_credit . "<br>";
-        echo "Course Day:" . $c_day . "<br>";
-        echo "Course Hour:" . $c_hour . "<br>";
-        echo "Course created by:" . $s_username . "<br>";
 
         // Close the statement and the connection
         mysqli_stmt_close($statement);
@@ -96,7 +85,7 @@
             <li class="flex-header-item"><img class="header-logo" src="logo.jpg" alt=""></li>
             <li class="flex-header-item"><a href="SecretaryPage.php">Home</a></li>
             <li class="flex-header-item"><a class="active" href="CoursesPage.php">Courses</a></li>
-            <li class="flex-header-item"><p>Tugce Keskin</p><img class="header-img" src="profile.jpg" alt=""></li>
+            <li class="flex-header-item"><?php echo $fname.' ' .$lname;?></li>
             <li class="flex-header-item"><a href="MainPage.php">Logout</a></li>
         </ul>
     </div>

@@ -100,7 +100,7 @@
 					header( 'Location: StudentPage.php' );
 				}
 				elseif($tablename=='instructor'){
-					header( 'Location: InstructorPage.html' );
+					header( 'Location: InstructorPage.php' );
 				}
 				else{
 					header( 'Location: SecretaryPage.php' );
@@ -173,7 +173,7 @@
 								header( 'Location: StudentPage.php' );
 							}
 							elseif($tablename=='instructor'){
-								header( 'Location: InstructorPage.html' );
+								header( 'Location: InstructorPage.php' );
 							}
 							else{
 								header( 'Location: SecretaryPage.php' );

@@ -48,7 +48,7 @@
             <li class="flex-header-item"><img class="header-logo" src="logo.jpg" alt=""></li>
             <li class="flex-header-item"><a href="SecretaryPage.php">Home</a></li>
             <li class="flex-header-item"><a class="active" href="CoursesPage.php">Courses</a></li>
-            <li class="flex-header-item"><p>Tugce Keskin</p><img class="header-img" src="profile.jpg" alt=""></li>
+            <li class="flex-header-item"><?php echo $fname.' ' .$lname;?></li>
             <li class="flex-header-item"><a href="MainPage.php">Logout</a></li>
         </ul>
     </div>
@@ -65,12 +65,12 @@
         
         <table class="zebra">
             <tr>
-                <th>Course Code</th>
-                <th>Course Name</th>
-                <th>Course Type</th>
-                <th>Course Instructor</th>
-                <th>Corse Credit</th>
-                <th colspan="2">Course Time</th>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Instructor</th>
+                <th>Credit</th>
+                <th colspan="2">Time</th>
                 <th></th>
             </tr>
 
