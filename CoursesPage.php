@@ -190,13 +190,14 @@
                 
                 while($row=mysqli_fetch_assoc($result)){
                     
-                    $linedata=array($row["course_code"],$row["course_name"],$row["course_type"] ,$row["course_instructor"],$row["s_username"],$row["course_credit"],$row["course_day"],$row["course_time"]);
+                    $linedata=array($row["course_code"],$row["course_name"],$row["course_type"] ,$row["course_instructor"],$row["s_username"],$row["course_credit"],$row["course_day"],$row["course_hour"]);
                     fputcsv($f,$linedata,$d);
+                    
                 }
                 fseek($f,0);
                 
             }
-    
+            
     
             // Initialize a file URL to the variable
             $url = './significant.csv';
