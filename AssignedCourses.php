@@ -113,7 +113,7 @@
                                 "<td>".$count."</td>".
                                 "<td>" . $row['course_day'] . "</td>" .
                                 "<td>" . $row['course_hour'] . "</td>" .
-                                '<td><a href="./material/Project.pdf"><button class="btn">Download </button></a></td>'.
+                                '<form  method="POST"><td><button class="btn" name="download">Download </button></td></form>'.
                                 '<td><input class="file" type="file" webkitdirectory="" directory=""></td>'.
                             "</tr>";
                     }
@@ -130,3 +130,56 @@
     
 </body>
 </html>
+
+<?php 
+
+if (isset($_POST['download'])) {
+    $d=',';
+    
+    // Connect to database
+    $conn = mysqli_connect($server, $user, $password, $database);
+
+    // Check connection
+    if (!$conn) {
+        die("Connection failed " . mysqli_connect_error());
+    }
+    
+    $sql = 'SELECT fname,lname,class,gpa FROM takes ,student,courses WHERE  course_instructor=? AND course_code=code AND st_username=username';
+            //$stmt = mysqli_query($conn, $sql);
+
+
+    $stmt = mysqli_prepare($conn, $sql);
+    mysqli_stmt_bind_param($stmt,'s', $i_username);
+    mysqli_stmt_execute($stmt);
+    print(mysqli_stmt_error($stmt) . "\n");
+    $result=mysqli_stmt_get_result($stmt);
+
+    
+
+    if(mysqli_num_rows($result)>0){
+        $f=fopen('significant.csv','w');
+        $fields=array('fname','lname','class','gpa');
+        fputcsv($f,$fields,$d);
+        
+        while($row=mysqli_fetch_assoc($result)){
+            
+            $linedata=array($row["fname"],$row["lname"],$row["class"],$row["gpa"]);
+            fputcsv($f,$linedata,$d);
+        }
+        fseek($f,0);
+        
+    }
+
+
+    // Initialize a file URL to the variable
+    $url = './significant.csv';
+    
+    header('Location: ./significant.csv');
+            
+    // Close the statement and the connection
+    mysqli_stmt_close($stmt);
+    
+    mysqli_close($conn);
+}
+
+?>

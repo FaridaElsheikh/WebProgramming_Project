@@ -70,7 +70,9 @@
             <ul class="flex-option-container">
                 <li class="flex-option-item"><h1>Taken Courses</h1></li>
                 <li class="flex-option-item"> <button class="btn" onclick="openForm()">Add</button></li>
-                <li class="flex-option-item"><a href="./material/Project.pdf"><button class="btn">Download</button></a></li>
+                <form method='POST'>
+                <li class="flex-option-item"><a href="significant.csv" ><button class="btn" name="download1">Download</button></a></li>
+                </form>
             </ul>
         </div>
     
@@ -240,6 +242,61 @@
         
         mysqli_close($conn);
     }
+   
+    if (isset($_POST['download1'])) {
+        $output='';
+        
+        // Connect to database
+        $conn = mysqli_connect($server, $user, $password, $database);
+
+        // Check connection
+        if (!$conn) {
+            die("Connection failed " . mysqli_connect_error());
+        }
+        
+        $sql = 'SELECT code , course_name, course_type,fname,lname FROM takes , courses,instructor WHERE code=course_code  AND st_username =? AND username=course_instructor';
+                //$stmt = mysqli_query($conn, $sql);
+
+
+        $stmt = mysqli_prepare($conn, $sql);
+        mysqli_stmt_bind_param($stmt,'s', $st_username);
+        mysqli_stmt_execute($stmt);
+        print(mysqli_stmt_error($stmt) . "\n");
+        $result=mysqli_stmt_get_result($stmt);
+
+        $d=',';
+        
+
+        if(mysqli_num_rows($result)>0){
+            $f=fopen('significant.csv','w');
+            $fields=array('code','name','type','instructor');
+            fputcsv($f,$fields,$d);
+            
+            while($row=mysqli_fetch_assoc($result)){
+                $n=$row["fname"] .' '. $row["lname"];
+                $linedata=array($row["code"],$row["course_name"],$row["course_type"] ,$n);
+                fputcsv($f,$linedata,$d);
+            }
+            fseek($f,0);
+            
+        }
+
+
+        // Initialize a file URL to the variable
+        $url = './significant.csv';
+        
+        header('Location: ./significant.csv');
+                
+        // Close the statement and the connection
+        mysqli_stmt_close($stmt);
+        
+        mysqli_close($conn);
+    }
+
+
+
+
+
 
 ?>
 
