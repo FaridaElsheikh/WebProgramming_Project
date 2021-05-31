@@ -134,7 +134,7 @@
                     die("Connection failed " . mysqli_connect_error());
                 }
 
-                $sql = 'SELECT code , course_name, course_type,course_instructor FROM takes , courses  WHERE code=course_code  AND st_username =?';
+                $sql = 'SELECT code , course_name, course_type,fname,lname FROM takes , courses,instructor WHERE code=course_code  AND st_username =? AND username=course_instructor';
                 //$stmt = mysqli_query($conn, $sql);
 
 
@@ -154,7 +154,7 @@
                                 "<td>" . $row['code'] . "</td>" .
                                 "<td>" . $row['course_name'] . "</td>" .
                                 "<td>" . $row['course_type'] . "</td>" .
-                                "<td>" . $row['course_instructor'] . "</td>" .
+                                "<td>" . $row['fname'] .' '. $row['lname']  . "</td>" .
                                 '<td class="download"><a href="./material/Project.pdf"><button class="btn">Download</button></a></td>'.
                             "</tr>";
                     }
