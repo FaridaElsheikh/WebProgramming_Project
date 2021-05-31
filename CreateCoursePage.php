@@ -91,13 +91,17 @@
 </head>
 <body>
 
-    <div class="header">
+<div class="header">
         <ul class="flex-header-container">
             <li class="flex-header-item"><img class="header-logo" src="logo.jpg" alt=""></li>
-            <li class="flex-header-item"><a href="SecretaryPage.php">Home</a></li>
-            <li class="flex-header-item"><a class="active" href="CoursesPage.php">Courses</a></li>
-            <li class="flex-header-item"><?php echo $fname.' ' .$lname;?></li>
-            <li class="flex-header-item"><a href="MainPage.php">Logout</a></li>
+            <li class="flex-header-item"><a class="active" href="SecretaryPage.php">Home</a></li>
+            <li class="flex-header-item"><a href="CoursesPage.php">Courses</a></li>
+            <li class="flex-header-item"><div class="dropdown">
+                <a href=""><?php echo $fname.' ' .$lname;?></a>
+                <div class="dropdown-content">
+                    <a href="MainPage.php">Logout</a>
+                </div>
+            </div></li>
         </ul>
     </div>
     
@@ -141,7 +145,7 @@
                                 die("Connection failed " . mysqli_connect_error());
                             }
 
-                            $sql = "SELECT fname,lname,username FROM instructor";
+                            $sql = "SELECT fname, lname, username FROM instructor";
                             $result = mysqli_query($conn, $sql);
 
                             if (mysqli_num_rows($result) > 0) {
@@ -184,8 +188,6 @@
            </select>
 
            <input type="time" name="c_hour" required>
-
-           select ... from courses where day=put here the day variable and time=put the time varibale
        </p>
 
        <input id="sendbtn" type="submit" name="create" value="Create"> 
