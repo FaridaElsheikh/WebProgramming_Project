@@ -58,6 +58,7 @@
     
     <div class="card">
         <h1><?php echo $fname.' ' .$lname;?></h1>
+        <p class="title">Research Area:</p>
         <p class="title"><?php echo $area;?></p>
         <p>School of Engineering and Natural Sciences</p>
     </div>

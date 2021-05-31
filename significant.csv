@@ -1,3 +1,3 @@
-code,name,type,instructor,secretary,credit,day,time
-55,"algorithm analysis",Mandatory,MuhsinZahid,sec1,3,Tuesday,00:00:00
-89,testcourse,Mandatory,haha,sec1,1,Monday,16:35:00
+code,name,type,instructor
+3220530,Microprocessors,Mandatory,"Mehmet Kemal"
+3233890,"Algorithm Analysis",Mandatory,"Reda Alhajj"

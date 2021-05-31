@@ -118,10 +118,6 @@
         </table>
         
         </form>
-        
-
-
-        <!-- <input type="file" name="cv_file"> --> 
 
         <br>
         
@@ -185,7 +181,7 @@
     
             if(mysqli_num_rows($result)>0){
                 $f=fopen('significant.csv','w');
-                $fields=array('code','name','type','instructor','secretary','credit','day','time');
+                $fields=array('code','name','type','instructor','secretary','credit','day','hour');
                 fputcsv($f,$fields,$d);
                 
                 while($row=mysqli_fetch_assoc($result)){

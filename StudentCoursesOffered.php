@@ -11,13 +11,13 @@
         die("Connection failed " . mysqli_connect_error());
     }
 
-    $sql = 'SELECT fname,lname,st_id,gpa,class FROM student WHERE username =?';
+    $sql = 'SELECT fname,lname,gpa,class FROM student WHERE username =?';
 
                 
     $stmt = mysqli_prepare($conn, $sql);
     mysqli_stmt_bind_param($stmt,'s', $st_username);
     mysqli_stmt_execute($stmt);
-    mysqli_stmt_bind_result($stmt, $fname,$lname,$st_id,$gpa,$class);
+    mysqli_stmt_bind_result($stmt, $fname,$lname,$gpa,$class);
     mysqli_stmt_fetch($stmt);
 
                 
