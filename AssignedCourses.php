@@ -45,8 +45,12 @@
             <li class="flex-header-item"><a  href="InstructorPage.php">Home</a></li>
             <li class="flex-header-item"><a class="active" href="AssignedCourses.php">Courses</a></li>
             <li class="flex-header-item"><a href="InstructorResearchGroup.php">Research Groups</a></li>
-            <li class="flex-header-item"><p><?php echo $fname.' ' .$lname;?></p><img class="header-img" src="./profile.jpg" alt=""></li>
-            <li class="flex-header-item"><a  href="MainPage.php">Logout</a></li>
+            <li class="flex-header-item"><div class="dropdown">
+                <a href=""><?php echo $fname.' ' .$lname;?></a>
+                <div class="dropdown-content">
+                    <a href="MainPage.php">Logout</a>
+                </div>
+            </div></li>
         </ul>
     </div>
  <div class="courses">
@@ -57,12 +61,15 @@
     <table class="zebra">
         
         <tr>
-           <th>Course Type</th>
-           <th>Course Code</th>
-           <th>Course Name</th>
+           <th> Code</th>
+           <th> Name</th>
+           <th> Type</th>
            <th>Number of Registered Students</th>
+           
+           <th colspan="2">Time</th>
            <th>Registered Student List</th>
            <th>Class Materials</th>
+           
         </tr>
         <?php
                 require_once('config.php');
@@ -75,7 +82,7 @@
                     die("Connection failed " . mysqli_connect_error());
                 }
 
-                $sql = 'SELECT course_code , course_name, course_type FROM courses  WHERE course_instructor =?';
+                $sql = 'SELECT course_code , course_name, course_type,course_day,course_hour FROM courses  WHERE course_instructor =?';
                 //$stmt = mysqli_query($conn, $sql);
 
                 $stmt = mysqli_prepare($conn, $sql);
@@ -100,10 +107,12 @@
 
 
                         echo "<tr>" .
-                                "<td>" . $row['course_type'] . "</td>" .
                                 "<td>" . $row['course_code'] . "</td>" .
                                 "<td>" . $row['course_name'] . "</td>" .
+                                "<td>" . $row['course_type'] . "</td>" .
                                 "<td>".$count."</td>".
+                                "<td>" . $row['course_day'] . "</td>" .
+                                "<td>" . $row['course_hour'] . "</td>" .
                                 '<td><a href="./material/Project.pdf"><button class="btn">Download </button></a></td>'.
                                 '<td><input class="file" type="file" webkitdirectory="" directory=""></td>'.
                             "</tr>";
@@ -114,32 +123,6 @@
                 echo "</table>";
             ?>
 
-        <!-- <tr>
-           <td>Elective</td>
-           <td>COE536</td>
-           <td>Pogramming for Engineers</td>
-           <td>130</td>
-           <td><a href="./material/Project.pdf"><button class="btn">Download </button></a></td>
-           <td><input class="file" type="file" webkitdirectory="" directory=""></td>
-           
-        </tr>
-        <tr>
-            <td>Elective</td>
-            <td>COE526</td>
-            <td>Databases</td>
-            <td>60</td>
-            <td><a href="./material/Project.pdf"><button class="btn">Download </button></a></td>
-            <td><input class="file" type="file" webkitdirectory="" directory=""></td>
-           
-         </tr>
-         <tr>
-            <td>Mandatory</td>
-            <td>COE516</td>
-            <td>Algorithm Analysis</td>
-            <td>80</td>
-            <td><a href="./material/Project.pdf"><button class="btn">Download </button></a></td>
-            <td><input class="file" type="file" webkitdirectory="" directory=""></td>
-         </tr> -->
     </table>
 </div>
        

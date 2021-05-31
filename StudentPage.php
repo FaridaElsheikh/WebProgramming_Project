@@ -53,8 +53,12 @@
             </div></li>
             
             <li class="flex-header-item"><a href="./StudentResearchGroup.php">Research Groups</a></li>
-            <li class="flex-header-item"><p><?php echo $fname.' ' .$lname;?></p><img class="header-img" src="./profile.jpg" alt=""></li>
-            <li class="flex-header-item"><a href="./MainPage.php">Logout</a></li>
+            <li class="flex-header-item"><div class="dropdown">
+                <a href=""><?php echo $fname.' ' .$lname;?></a>
+                <div class="dropdown-content">
+                    <a href="MainPage.php">Logout</a>
+                </div>
+            </div></li>
         </ul>
     </div>
 
@@ -64,7 +68,6 @@
         <p class="title"><?php echo $class;?> Year</p>
         <p>School of Engineering and Natural Sciences</p>
         <p>GPA: <?php echo $gpa;?> </p> 
-        <a href="./material/Project.pdf"><button class="btn">Download Transcript</button></a>
     </div>
 </body>
 </html>

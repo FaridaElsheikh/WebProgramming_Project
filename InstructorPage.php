@@ -47,17 +47,19 @@
             <li class="flex-header-item"><a class="active"  href="InstructorPage.php">Home</a></li>
             <li class="flex-header-item"><a href="AssignedCourses.php">Courses</a></li>
             <li class="flex-header-item"><a href="InstructorResearchGroup.php">Research Groups</a></li>
-            <li class="flex-header-item"><p><?php echo $fname.' ' .$lname;?></p><img class="header-img" src="./profile.jpg" alt=""></li>
-            <li class="flex-header-item"><a href="MainPage.php">Logout</a></li>
+            <li class="flex-header-item"><div class="dropdown">
+                <a href=""><?php echo $fname.' ' .$lname;?></a>
+                <div class="dropdown-content">
+                    <a href="MainPage.php">Logout</a>
+                </div>
+            </div></li>
         </ul>
     </div>
     
     <div class="card">
-        <img src="instructor.png" alt="na">
         <h1><?php echo $fname.' ' .$lname;?></h1>
-        <p class="title">Teaching Assistant</p>
+        <p class="title"><?php echo $area;?></p>
         <p>School of Engineering and Natural Sciences</p>
-        <a href="#"><i class="fa fa-linkedin"></i></a> 
     </div>
 
 

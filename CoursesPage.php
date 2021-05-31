@@ -46,8 +46,8 @@
 <div class="header">
         <ul class="flex-header-container">
             <li class="flex-header-item"><img class="header-logo" src="logo.jpg" alt=""></li>
-            <li class="flex-header-item"><a class="active" href="SecretaryPage.php">Home</a></li>
-            <li class="flex-header-item"><a href="CoursesPage.php">Courses</a></li>
+            <li class="flex-header-item"><a href="SecretaryPage.php">Home</a></li>
+            <li class="flex-header-item"><a class="active" href="CoursesPage.php">Courses</a></li>
             <li class="flex-header-item"><div class="dropdown">
                 <a href=""><?php echo $fname.' ' .$lname;?></a>
                 <div class="dropdown-content">
@@ -108,9 +108,7 @@
                             "</tr>";
                     }
                     echo "</table>";
-                } else {
-                    echo "No results";
-                }
+                } 
                 
                 mysqli_close($conn);
 

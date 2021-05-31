@@ -32,7 +32,7 @@
 
 
 <?php
-
+    $error='';
     require_once('config.php');
 
     if (isset($_POST['create'])) {
@@ -51,15 +51,33 @@
         if (!$conn) {
             die("Connection failed " . mysqli_connect_error());
         }
-
         // Prepare an insert statement
-        $query = "INSERT INTO courses (course_code, course_name, course_type, course_instructor, course_credit, course_day, course_hour, s_username) VALUES (?,?,?,?,?,?,?,?)";        
+        $query = "Select course_code FROM courses WHERE course_day=? and course_hour=?";        
         $statement = mysqli_prepare($conn, $query);
-        mysqli_stmt_bind_param($statement, 'isssisss', $c_code, $c_name, $c_type, $c_instructor, $c_credit, $c_day, $c_hour, $sec_username); // coursecode
-
+        mysqli_stmt_bind_param($statement, 'ss', $c_day, $c_hour); // coursecode
         // Execute the prepared statement
         mysqli_stmt_execute($statement);
+        
+
+        $result=mysqli_stmt_get_result($statement);
         print(mysqli_stmt_error($statement) . "\n");
+        if (mysqli_num_rows($result) == 0) {
+            // Connect to database
+             $conn = mysqli_connect($server, $user, $password, $database);
+            // Prepare an insert statement
+            $query1 = "INSERT INTO courses (course_code, course_name, course_type, course_instructor, course_credit, course_day, course_hour, s_username) VALUES (?,?,?,?,?,?,?,?)";        
+            $statement1 = mysqli_prepare($conn, $query1);
+            mysqli_stmt_bind_param($statement1, 'isssisss', $c_code, $c_name, $c_type, $c_instructor, $c_credit, $c_day, $c_hour, $sec_username); // coursecode
+
+            // Execute the prepared statement
+            mysqli_stmt_execute($statement1);
+            print(mysqli_stmt_error($statement1) . "\n");
+        }
+        else{
+            $error='There is another course at that time';
+        }
+
+        
 
         // Close the statement and the connection
         mysqli_stmt_close($statement);
@@ -83,8 +101,8 @@
 <div class="header">
         <ul class="flex-header-container">
             <li class="flex-header-item"><img class="header-logo" src="logo.jpg" alt=""></li>
-            <li class="flex-header-item"><a class="active" href="SecretaryPage.php">Home</a></li>
-            <li class="flex-header-item"><a href="CoursesPage.php">Courses</a></li>
+            <li class="flex-header-item"><a  href="SecretaryPage.php">Home</a></li>
+            <li class="flex-header-item"><a class="active" href="CoursesPage.php">Courses</a></li>
             <li class="flex-header-item"><div class="dropdown">
                 <a href=""><?php echo $fname.' ' .$lname;?></a>
                 <div class="dropdown-content">
@@ -143,8 +161,6 @@
                                 echo 
                                     "<option  value='".$row['username'] ."' >" . $row['fname'] ." ". $row['lname']. "</option>" ;                               
                             }
-                            } else {
-                                echo "No results";
                             }
                             mysqli_close($conn);
                         ?>
@@ -180,6 +196,9 @@
        </p>
 
        <input id="sendbtn" type="submit" name="create" value="Create"> 
+       <div style="color: red;">
+							<?php echo $error; ?>
+		</div>
 
     </div>
 

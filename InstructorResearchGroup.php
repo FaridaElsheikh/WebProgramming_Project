@@ -47,8 +47,12 @@
           <li class="flex-header-item"><a href="InstructorPage.php">Home</a></li>
           <li class="flex-header-item"><a href="AssignedCourses.php">Courses</a></li>
           <li class="flex-header-item"><a class="active" href="InstructorResearchGroup.php">Research Groups</a></li>
-          <li class="flex-header-item"><p><?php echo $fname.' ' .$lname;?></p><img class="header-img" src="./profile.jpg" alt=""></li>
-          <li class="flex-header-item"><a href="MainPage.php">Logout</a></li>
+          <li class="flex-header-item"><div class="dropdown">
+                <a href=""><?php echo $fname.' ' .$lname;?></a>
+                <div class="dropdown-content">
+                    <a href="MainPage.php">Logout</a>
+                </div>
+            </div></li>
       </ul>
   </div>
 
@@ -142,8 +146,7 @@
             <th>GPA</th>
             <th>Class</th>
             <th>Courses Taken</th>
-            <th>Respond</th>
-            <th>Respond</th>
+            <th colspan="2">Respond</th>
         </tr>
          <?php
             require_once('config.php');

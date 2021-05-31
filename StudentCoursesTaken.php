@@ -55,8 +55,12 @@
             </div></li>
             
             <li class="flex-header-item"><a href="./StudentResearchGroup.php">Research Groups</a></li>
-            <li class="flex-header-item"><p><?php echo $fname.' ' .$lname;?></p><img class="header-img" src="./profile.jpg" alt=""></li>
-            <li class="flex-header-item"><a href="./MainPage.php">Logout</a></li>
+            <li class="flex-header-item"><div class="dropdown">
+                <a href=""><?php echo $fname.' ' .$lname;?></a>
+                <div class="dropdown-content">
+                    <a href="MainPage.php">Logout</a>
+                </div>
+            </div></li>
         </ul>
     </div>
    
@@ -116,6 +120,7 @@
                     <th>Code</th>
                     <th>Name</th>
                     <th>Type</th>
+                    <th>Instructor</th>
                     <th>Material</th>
                 </tr>
                 <?php
@@ -129,7 +134,7 @@
                     die("Connection failed " . mysqli_connect_error());
                 }
 
-                $sql = 'SELECT code , course_name, course_type FROM takes , courses  WHERE code=course_code  AND st_username =?';
+                $sql = 'SELECT code , course_name, course_type,course_instructor FROM takes , courses  WHERE code=course_code  AND st_username =?';
                 //$stmt = mysqli_query($conn, $sql);
 
 
@@ -149,6 +154,7 @@
                                 "<td>" . $row['code'] . "</td>" .
                                 "<td>" . $row['course_name'] . "</td>" .
                                 "<td>" . $row['course_type'] . "</td>" .
+                                "<td>" . $row['course_instructor'] . "</td>" .
                                 '<td class="download"><a href="./material/Project.pdf"><button class="btn">Download</button></a></td>'.
                             "</tr>";
                     }
@@ -236,3 +242,6 @@
     }
 
 ?>
+
+
+

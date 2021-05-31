@@ -44,7 +44,7 @@
 			else {
 				$pass = $_POST['password2'];
 				if(!preg_match('/[a-z][0-9]{3}/', $pass)) {
-					$errors['password2'] = 'Not a valid password';
+					$errors['password2'] = 'Password should contain at least 3 numbers and 3 letters';
 				}
 			}
 			if(!isset($_POST['type2'])) {
@@ -226,7 +226,7 @@
 		<div class="login-html">
 			<input id="tab-1" type="radio" name="tab" class="secretary" value="signin" checked><label for="tab-1" class="tab">Sign in</label>
 			<input id="tab-2" type="radio" name="tab" class="instructor" value="signup"><label for="tab-2" class="tab">Sign up</label>
-			<!-- <input id="tab-3" type="radio" name="tab" class="student" value="student"><label for="tab-3" class="tab">Student</label> -->
+			
 			<input id="tab-3" type="radio" name="tab" class="student" value="student"><label for="tab-3" class="tab"></label>
 			<div class="login-form">
 
