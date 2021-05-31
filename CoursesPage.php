@@ -43,13 +43,17 @@
 </head>
 <body>
 
-    <div class="header">
+<div class="header">
         <ul class="flex-header-container">
             <li class="flex-header-item"><img class="header-logo" src="logo.jpg" alt=""></li>
-            <li class="flex-header-item"><a href="SecretaryPage.php">Home</a></li>
-            <li class="flex-header-item"><a class="active" href="CoursesPage.php">Courses</a></li>
-            <li class="flex-header-item"><?php echo $fname.' ' .$lname;?></li>
-            <li class="flex-header-item"><a href="MainPage.php">Logout</a></li>
+            <li class="flex-header-item"><a class="active" href="SecretaryPage.php">Home</a></li>
+            <li class="flex-header-item"><a href="CoursesPage.php">Courses</a></li>
+            <li class="flex-header-item"><div class="dropdown">
+                <a href=""><?php echo $fname.' ' .$lname;?></a>
+                <div class="dropdown-content">
+                    <a href="MainPage.php">Logout</a>
+                </div>
+            </div></li>
         </ul>
     </div>
   
@@ -126,35 +130,35 @@
 
     <?php
 
-    require_once('config.php');
-    
-    if (isset($_POST['delete'])) {
+        require_once('config.php');
+        
+        if (isset($_POST['delete'])) {
 
-        $c_code = $_POST['delete'];
+            $c_code = $_POST['delete'];
 
-        // Connect to database
-        $conn = mysqli_connect($server, $user, $password, $database);
+            // Connect to database
+            $conn = mysqli_connect($server, $user, $password, $database);
 
-        // Check connection
-        if (!$conn) {
-            die("Connection failed " . mysqli_connect_error());
+            // Check connection
+            if (!$conn) {
+                die("Connection failed " . mysqli_connect_error());
+            }
+            
+            $query = "DELETE FROM courses WHERE course_code = ?"; 
+                
+            $statement = mysqli_prepare($conn, $query);
+            
+            mysqli_stmt_bind_param($statement, 'i', $c_code);
+
+            // Execute the prepared statement
+            mysqli_stmt_execute($statement);
+            print(mysqli_stmt_error($statement) . "\n");
+
+            // Close the statement and the connection
+            mysqli_stmt_close($statement);
+            
+            mysqli_close($conn);
         }
-        
-        $query = "DELETE FROM courses WHERE course_code = ?"; 
-             
-        $statement = mysqli_prepare($conn, $query);
-        
-        mysqli_stmt_bind_param($statement, 'i', $c_code);
-
-        // Execute the prepared statement
-        mysqli_stmt_execute($statement);
-        print(mysqli_stmt_error($statement) . "\n");
-
-        // Close the statement and the connection
-        mysqli_stmt_close($statement);
-        
-        mysqli_close($conn);
-    }
 
 ?>
 

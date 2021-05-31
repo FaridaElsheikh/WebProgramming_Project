@@ -60,8 +60,7 @@
         <!-- <img src="secretary.png" alt="tk"> -->
         <h1><?php echo $fname.' ' .$lname;?></h1>
         <p class="title">Faculty Secretary</p>
-        <p>School of Engineering and Natural Sciences</p>
-      
+        <p>School of Engineering and Natural Sciences</p>     
     </div>
     
 </body>
