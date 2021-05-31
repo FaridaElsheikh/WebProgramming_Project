@@ -49,7 +49,8 @@
 			}
 			if(!isset($_POST['type2'])) {
 				$errors['choice2'] = 'Please select your role';
-			} 
+			}
+			 
 			if(array_filter($errors)) {
 				// echo 'errors in the form';
 			} else {				

@@ -193,6 +193,25 @@
                     mysqli_stmt_execute($stmt);
                     print(mysqli_stmt_error($stmt) . "\n");
                     $result=mysqli_stmt_get_result($stmt);
+                    $st_courses='';
+                    
+                    $sql2 = 'SELECT course_name FROM takes,courses  WHERE st_username=? and code=course_code';
+                    $stmt2 = mysqli_prepare($conn, $sql2);
+                    mysqli_stmt_bind_param($stmt2,'s', $st);
+                    mysqli_stmt_execute($stmt2);
+                    print(mysqli_stmt_error($stmt2) . "\n");
+                    $result2=mysqli_stmt_get_result($stmt2);
+                    $total=mysqli_num_rows($result2);
+                    $i=0;
+                    while($row = mysqli_fetch_assoc($result2)){
+                        if(++$i==$total ){
+                            $st_courses.=$row['course_name'];
+                        }
+                        else{
+                            $st_courses.=$row['course_name'].',';
+                        }
+                                    
+                    }
                     // Output data of each row
                     while($row = mysqli_fetch_assoc($result)) {
                         echo "<tr>" .
@@ -201,7 +220,7 @@
                                 "<td>" . $row['lname'] . "</td>" .
                                 "<td>" . $row['gpa'] . "</td>" .
                                 "<td>" . $row['class'] . "</td>" .
-                                "<td>courses</td>" .
+                                "<td>".$st_courses."</td>" .
                                 '<td ><button class="btn" name="approve" value='.$st.' >Approve</button></td>' .
                                 '<td ><button class="btn" name="reject" value='.$st.' >Reject</button></td>' .
                             "</tr>";
