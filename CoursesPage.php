@@ -66,7 +66,7 @@
                 <li class="flex-option-item"><a href="./material/Project.pdf"><button class="dowbtn"><i class="fa fa-download"></i>Download</button></a></li>
             </ul>
         </div>
-        
+        <form method='POST'>
         <table class="zebra">
             <tr>
                 <th>Code</th>
@@ -117,6 +117,10 @@
             ?>   
 
         </table>
+        
+        </form>
+        
+
 
         <!-- <input type="file" name="cv_file"> --> 
 
