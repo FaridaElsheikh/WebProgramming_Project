@@ -157,7 +157,7 @@ a{color:inherit;text-decoration:none}
 }
 
 .login-form .group .check:checked + label .icon:before {
-	transform:scale(1) rotate(45deg);
+	transform:scale(1) rotate(360deg);
 }
 .login-form .group .check:checked + label .icon:after {
 	transform:scale(1) rotate(-360deg);

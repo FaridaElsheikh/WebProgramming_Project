@@ -211,7 +211,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MEBIS</title>
     <link rel="stylesheet" href="MainPage.css">
-    <script src="./LoginFunction.js"></script>
 	<link rel="stylesheet" href="Header-Background.css">
 </head>
 <body>
