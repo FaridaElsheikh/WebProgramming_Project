@@ -2,10 +2,12 @@
 <?php
 	require_once('config.php');
 	session_start();
+	$flag=0;
     $username = $pass = $fname =$lname= '';
     $errors = array('fname1'=>'','lname1'=>'','username1'=>'', 'password1'=>'','choice1'=>'',
 					'fname2'=>'','lname2'=>'','username2'=>'', 'password2'=>'','choice2'=>'','other'=>'');
-    if (isset($_POST['signup'])) {
+    if (isset($_POST['signup'])) {	
+			$flag=1;
 
 			if(empty($_POST['fname2']) ) {
 				$errors['fname2'] = 'A first name is required ';
@@ -110,6 +112,7 @@
 		}
 		
 		if(isset($_POST['signin'])){
+			$flag=0;
 			if(empty($_POST['username1'])) {
 				$errors['username1'] = 'A username is required';
 			} else {
@@ -224,10 +227,23 @@
 
 	<div class="login-wrap">
 		<div class="login-html">
-			<input id="tab-1" type="radio" name="tab" class="secretary" value="signin" checked><label for="tab-1" class="tab">Sign in</label>
-			<input id="tab-2" type="radio" name="tab" class="instructor" value="signup"><label for="tab-2" class="tab">Sign up</label>
+			<?php
+				if(!$flag){
+					echo'
+					<input id="tab-1" type="radio" name="tab" class="secretary" value="signin" checked><label for="tab-1" class="tab">Sign in</label>
+					<input id="tab-2" type="radio" name="tab" class="instructor" value="signup"><label for="tab-2" class="tab">Sign up</label>
+					<input id="tab-3" type="radio" name="tab" class="student" value="student"><label for="tab-3" class="tab"></label>
+					';
+				}
+				else{
+					echo '
+					<input id="tab-1" type="radio" name="tab" class="secretary" value="signin" ><label for="tab-1" class="tab">Sign in</label>
+					<input id="tab-2" type="radio" name="tab" class="instructor" value="signup" checked><label for="tab-2" class="tab">Sign up</label>
+					<input id="tab-3" type="radio" name="tab" class="student" value="student"><label for="tab-3" class="tab"></label>
+					';
+				}
+			?>
 			
-			<input id="tab-3" type="radio" name="tab" class="student" value="student"><label for="tab-3" class="tab"></label>
 			<div class="login-form">
 
 				<div class="secretary-htm">
