@@ -2,10 +2,12 @@
 <?php
 	require_once('config.php');
 	session_start();
+	$flag=0;
     $username = $pass = $fname =$lname= '';
     $errors = array('fname1'=>'','lname1'=>'','username1'=>'', 'password1'=>'','choice1'=>'',
 					'fname2'=>'','lname2'=>'','username2'=>'', 'password2'=>'','choice2'=>'','other'=>'');
-    if (isset($_POST['signup'])) {
+    if (isset($_POST['signup'])) {	
+			$flag=1;
 
 			if(empty($_POST['fname2']) ) {
 				$errors['fname2'] = 'A first name is required ';
@@ -110,6 +112,7 @@
 		}
 		
 		if(isset($_POST['signin'])){
+			$flag=0;
 			if(empty($_POST['username1'])) {
 				$errors['username1'] = 'A username is required';
 			} else {
@@ -224,23 +227,36 @@
 
 	<div class="login-wrap">
 		<div class="login-html">
-			<input id="tab-1" type="radio" name="tab" class="secretary" value="signin" checked><label for="tab-1" class="tab">Sign in</label>
-			<input id="tab-2" type="radio" name="tab" class="instructor" value="signup"><label for="tab-2" class="tab">Sign up</label>
+			<?php
+				if(!$flag){
+					echo'
+					<input id="tab-1" type="radio" name="tab" class="secretary" value="signin" checked><label for="tab-1" class="tab">Sign in</label>
+					<input id="tab-2" type="radio" name="tab" class="instructor" value="signup"><label for="tab-2" class="tab">Sign up</label>
+					<input id="tab-3" type="radio" name="tab" class="student" value="student"><label for="tab-3" class="tab"></label>
+					';
+				}
+				else{
+					echo '
+					<input id="tab-1" type="radio" name="tab" class="secretary" value="signin" ><label for="tab-1" class="tab">Sign in</label>
+					<input id="tab-2" type="radio" name="tab" class="instructor" value="signup" checked><label for="tab-2" class="tab">Sign up</label>
+					<input id="tab-3" type="radio" name="tab" class="student" value="student"><label for="tab-3" class="tab"></label>
+					';
+				}
+			?>
 			
-			<input id="tab-3" type="radio" name="tab" class="student" value="student"><label for="tab-3" class="tab"></label>
 			<div class="login-form">
 
 				<div class="secretary-htm">
 					<div class="group">
 						<label for="user" class="label">Username</label>
-						<input id="user" type="text" name="username1" class="input">
+						<input id="user" type="text" name="username1" class="input" value=<?php echo$username;?>>
 						<div style="color: red;">
 							<?php echo $errors['username1']; ?>
 						</div>
 					</div>
 					<div class="group">
 						<label for="pass" class="label">Password</label>
-						<input id="pass" type="password" class="input" name="password1" data-type="password">
+						<input id="pass" type="password" class="input" name="password1" data-type="password" >
 						<div style="color: red;">
 							<?php echo $errors['password1']; ?>
 						</div>
@@ -265,21 +281,21 @@
 				<div class="instructor-htm">
 					<div class="group">
 						<label for="user" class="label">First Name</label>
-						<input id="user" type="text" name="fname2" class="input">
+						<input id="user" type="text" name="fname2" class="input" value=<?php echo $fname;?>>
 						<div style="color: red;">
 							<?php echo $errors['fname2']; ?>
 						</div>
 					</div>
 					<div class="group">
 						<label for="user" class="label">Last name</label>
-						<input id="user" type="text" name="lname2" class="input">
+						<input id="user" type="text" name="lname2" class="input" value=<?php echo $lname;?>>
 						<div style="color: red;">
 							<?php echo $errors['lname2']; ?>
 						</div>
 					</div>
 					<div class="group">
 						<label for="user" class="label">Username</label>
-						<input id="user" type="text" name="username2" class="input">
+						<input id="user" type="text" name="username2" class="input" value=<?php echo $username;?>>
 						<div style="color: red;">
 							<?php echo $errors['username2']; ?>
 						</div>
