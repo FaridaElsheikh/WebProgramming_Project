@@ -1,4 +1,5 @@
 <?php
+
     session_start();
     $i_username=($_SESSION['username']);
     require_once('config.php');
@@ -27,6 +28,7 @@
     mysqli_stmt_close($stmt);
         
     mysqli_close($conn);
+    
 ?>
 
 <!DOCTYPE html>

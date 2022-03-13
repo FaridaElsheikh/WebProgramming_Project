@@ -1,14 +1,14 @@
-body{
+body {
   font-family:'Roboto', sans-serif;
 }
+
 .courses {
   box-shadow: 0px 4px 8px 0px rgba(120, 111, 166,1.0); 
   padding: 10px;
   border-radius: 10px;
 }
 
-
-h1{
+h1 {
     font-size: 30px;
     color: rgb(112, 77, 151);
     text-transform: uppercase;
@@ -22,7 +22,7 @@ table.zebra tr:nth-child(even) {
  }
  
  
- table.zebra   {
+ table.zebra {
      border-collapse: collapse;
      width: 100%;
      margin: 0px 0px;
@@ -42,8 +42,6 @@ table.zebra tr:nth-child(even) {
  
  }
 
- 
- 
  table.zebra td {
      padding: 10px 3px;
      border-bottom: 1px solid rgba(120, 111, 166,1.0);
@@ -51,8 +49,7 @@ table.zebra tr:nth-child(even) {
      letter-spacing: .5px;
      text-align: center;
    border-left: 1px solid rgba(120, 111, 166,1.0);
-     border-right: 1px solid rgba(120, 111, 166,1.0);
-     
+     border-right: 1px solid rgba(120, 111, 166,1.0);   
  }
  
  table.zebra tr {
@@ -63,7 +60,7 @@ table.zebra tr:nth-child(even) {
      padding: 10px 20px 10px 20px;
  }
  
- h2{
+ h2 {
     font-size: 30px;
     color: rgb(112, 77, 151);
     text-transform: uppercase;
@@ -71,7 +68,8 @@ table.zebra tr:nth-child(even) {
     text-align: center;
     margin-bottom: 15px;
   }
-  h6{
+
+  h6 {
     font-size: 18px;
     color: rgb(112, 77, 151);
     text-transform: uppercase;
@@ -93,6 +91,7 @@ table.zebra tr:nth-child(even) {
   .btn:hover {
     background-color: #e6d7ff;
   }
+  
   .file{
     background-color: rgba(120, 111, 166,1.0);
     border: none;

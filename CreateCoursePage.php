@@ -32,6 +32,7 @@
 
 
 <?php
+
     $error='';
     require_once('config.php');
 

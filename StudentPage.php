@@ -1,4 +1,5 @@
 <?php
+
     session_start();
     $st_username=($_SESSION['username']);
     require_once('config.php');
@@ -28,6 +29,7 @@
         
     mysqli_close($conn);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
