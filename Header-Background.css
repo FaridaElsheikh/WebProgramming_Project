@@ -3,7 +3,6 @@ body {
     background-color: rgb(240, 242, 245);
 }
 
-
 .flex-header-container { 
     background-color:rgba(120, 111, 166,1.0);
     display: flex;
@@ -18,7 +17,7 @@ body {
     color: white;
 }
 
-.flex-header-item p{
+.flex-header-item p {
     display:inline;
     position: relative;
     bottom: 18px;

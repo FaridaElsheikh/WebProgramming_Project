@@ -159,6 +159,7 @@ a{color:inherit;text-decoration:none}
 .login-form .group .check:checked + label .icon:before {
 	transform:scale(1) rotate(360deg);
 }
+
 .login-form .group .check:checked + label .icon:after {
 	transform:scale(1) rotate(-360deg);
 }
@@ -166,6 +167,7 @@ a{color:inherit;text-decoration:none}
 .login-html .secretary:checked + .tab + .instructor + .tab + .student + .tab + .login-form .secretary-htm {
 	transform:rotate(0);
 }
+
 .login-html .instructor:checked + .tab + .student + .tab +.login-form .instructor-htm {
 	transform:rotate(0);
 }
@@ -179,6 +181,7 @@ a{color:inherit;text-decoration:none}
 	margin:60px 0 50px 0;
 	background:rgba(120, 111, 166,1.0);
 }
+
 .foot-lnk {
 	text-align:center;
 }

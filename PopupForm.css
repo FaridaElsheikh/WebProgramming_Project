@@ -24,7 +24,7 @@
     border-radius: 10px;
 }
 
-hr{
+hr {
     color: rgba(120, 111, 166,1.0)s;
 }
 
@@ -38,6 +38,7 @@ hr{
     margin-bottom:10px;
     opacity: 0.8;
 }
+
 .form-container .btn:hover {
     background-color: #e6d7ff;
   }

@@ -1,4 +1,4 @@
-body{
+body {
   font-family:'Roboto', sans-serif;
 }
 
@@ -7,7 +7,8 @@ body{
   padding: 10px;
   border-radius: 10px;
 }
-.flex-option-container{
+
+.flex-option-container {
   display: flex;
   flex-direction: row;
   list-style-type: none;
@@ -19,8 +20,7 @@ body{
   align-content: center;
 }
 
-
-h1{
+h1 {
     font-size: 30px;
     color: rgb(112, 77, 151);
     text-transform: uppercase;
@@ -34,7 +34,7 @@ table.zebra tr:nth-child(even) {
  }
  
  
- table.zebra   {
+ table.zebra {
      border-collapse: collapse;
      width: 100%;
      margin: 0px 0px;
@@ -54,8 +54,6 @@ table.zebra tr:nth-child(even) {
  
  }
 
- 
- 
  table.zebra td {
      padding: 10px 3px;
      border-bottom: 1px solid rgba(120, 111, 166,1.0) ;
@@ -63,8 +61,7 @@ table.zebra tr:nth-child(even) {
      letter-spacing: .5px;
      text-align: center;
    border-left: 1px solid rgba(120, 111, 166,1.0);
-     border-right: 1px solid rgba(120, 111, 166,1.0);
-     
+     border-right: 1px solid rgba(120, 111, 166,1.0);   
  }
  
  table.zebra tr {
@@ -75,7 +72,7 @@ table.zebra tr:nth-child(even) {
      padding: 10px 20px 10px 20px;
  }
  
- h2{
+ h2 {
     font-size: 30px;
     color: rgb(112, 77, 151);
     text-transform: uppercase;
@@ -83,7 +80,8 @@ table.zebra tr:nth-child(even) {
     text-align: center;
     margin-bottom: 15px;
   }
-  h6{
+
+  h6 {
     font-size: 18px;
     color: rgb(112, 77, 151);
     text-transform: uppercase;
